@@ -1,0 +1,39 @@
+##eureka发现服务
+eureka:
+  instance:
+    hostname: admin-server
+    instanceId: ${server.port}[admin-server]
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 3
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    registryFetchIntervalSeconds: 3
+    instanceInfoReplicationIntervalSeconds: 3
+    initialInstanceInfoReplicationIntervalSeconds: 4
+    serviceUrl:
+      defaultZone: http://node1:10001/eureka/,http://node2:10002/eureka/,http://node3:10003/eureka/
+  server:
+    evictionIntervalTimerInMs: 3000
+    
+spring:
+  mail:
+    host: smtp.exmail.qq.com
+    username: jishujiankong@51tuodao.com
+    password: Tuodao123
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+            required: false
+  boot:
+    admin:
+      notify:
+        mail:
+          enabled: true
+          ignore-changes: UNKNOWN:SERVICE
+          from: jishujiankong@51tuodao.com 
+          to: hechuan@51tuodao.com
+          cc: mifu@51tuodao.com,liuwenkai@51tuodao.com   

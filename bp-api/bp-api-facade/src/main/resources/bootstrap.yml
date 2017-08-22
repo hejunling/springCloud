@@ -1,0 +1,15 @@
+##端口
+server:
+  port: 10007
+
+##应用名  
+spring:
+  application:
+    name: bp-api-facade
+
+##日志
+logging:
+  config: classpath:logback-spring.xml
+  path: F:/log/bp/apifacade/
+  level:
+        com.tuodao.bp.api.facade: info

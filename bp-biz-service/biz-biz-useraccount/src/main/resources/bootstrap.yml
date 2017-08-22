@@ -1,0 +1,15 @@
+##端口
+server:
+  port: 10008
+
+##应用名  
+spring:
+  application:
+    name: biz-user-account
+
+##日志
+logging:
+  config: classpath:logback-spring.xml
+  path: F:/log/bp/useraccount/
+  level:
+        org.biz.biz.useraccount: info

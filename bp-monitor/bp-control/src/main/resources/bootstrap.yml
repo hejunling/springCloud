@@ -1,0 +1,15 @@
+##端口
+server:
+  port: 10005
+
+##应用名  
+spring:
+  application:
+    name: bp-admin-server
+
+##日志
+logging:
+  config: classpath:logback-spring.xml
+  path: F:/log/bp/adminserver/
+  level:
+        com.tuodao.bp.control: info
