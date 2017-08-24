@@ -2,6 +2,8 @@ package com.tuodao.bp.model.input.demo;
 
 import java.io.Serializable;
 
+import com.google.common.base.MoreObjects;
+
 public class DemoInput implements Serializable {
 
 	/**
@@ -29,4 +31,8 @@ public class DemoInput implements Serializable {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		return MoreObjects.toStringHelper(this).add("name", name).add("address", address).toString();
+	}
 }

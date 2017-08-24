@@ -119,7 +119,7 @@ public class ExceptionHandler {
 		int code = ex.getCode();
 		String msg = getRespMessage(ex.getMsg(),code);
 		logger.info("框架异常..code = {},msg = {}", code, msg);
-		return RespResult.<String> create().setCode(code).setMsg(msg);
+		return RespResult.<String> create().setCode(code).setMsg(msg).setSuccess(false);
 	}
 
 	@ResponseBody

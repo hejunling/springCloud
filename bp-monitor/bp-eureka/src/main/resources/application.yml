@@ -1,3 +1,16 @@
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 3
+    evictionIntervalTimerInMs: 3
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    registryFetchIntervalSeconds: 3
+    instanceInfoReplicationIntervalSeconds: 3
+    initialInstanceInfoReplicationIntervalSeconds: 4
+  server:
+    evictionIntervalTimerInMs: 3000
 ---
 spring:
   profiles: node1
@@ -17,18 +30,9 @@ eureka:
   instance:
     hostname: node1
     instanceId: ${server.port}[node1]
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 3
   client:
-    registerWithEureka: true
-    fetchRegistry: false
-    registryFetchIntervalSeconds: 3
-    instanceInfoReplicationIntervalSeconds: 3
-    initialInstanceInfoReplicationIntervalSeconds: 4
     serviceUrl:
       defaultZone: http://node2:10002/eureka/,http://node3:10003/eureka/
-  server:
-    evictionIntervalTimerInMs: 3000
 
 ---
 spring:
@@ -46,20 +50,10 @@ eureka:
   instance:
     hostname: node2
     instanceId: ${server.port}[node2]
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 3
-    evictionIntervalTimerInMs: 3
   client:
-    registerWithEureka: true
-    fetchRegistry: false
-    registryFetchIntervalSeconds: 3
-    instanceInfoReplicationIntervalSeconds: 3
-    initialInstanceInfoReplicationIntervalSeconds: 4
     serviceUrl:
       defaultZone: http://node1:10001/eureka/,http://node3:10003/eureka/
-  server:
-    evictionIntervalTimerInMs: 3000
-
+      
 ---
 spring:
   profiles: node3
@@ -76,18 +70,8 @@ eureka:
   instance:
     hostname: node3
     instanceId: ${server.port}[node3]
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 3
-    evictionIntervalTimerInMs: 3
   client:
-    registerWithEureka: true
-    fetchRegistry: false
-    registryFetchIntervalSeconds: 3
-    instanceInfoReplicationIntervalSeconds: 3
-    initialInstanceInfoReplicationIntervalSeconds: 4
     serviceUrl:
       defaultZone: http://node1:10001/eureka/,http://node2:10002/eureka/
-  server:
-    evictionIntervalTimerInMs: 3000    
 
     

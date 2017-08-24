@@ -1,13 +1,10 @@
 ##eureka发现服务
 eureka:
   instance:
-    hostname: user-account
     instanceId: ${server.port}[user-account]
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 3
   client:
-    registerWithEureka: true
-    fetchRegistry: false
     registryFetchIntervalSeconds: 3
     instanceInfoReplicationIntervalSeconds: 3
     initialInstanceInfoReplicationIntervalSeconds: 4
@@ -60,15 +57,8 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 60000
 
-api-facade:
-  ribbon:
-    ConnectTimeout: 2000
-    ReadTimeout: 1000
-    OkToRetryOnAllOperations: true
-    MaxAutoRetriesNextServer: 2
-    MaxAutoRetries: 1
 
 ##管理安全 
 management:

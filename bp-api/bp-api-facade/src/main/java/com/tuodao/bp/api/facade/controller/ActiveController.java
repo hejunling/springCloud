@@ -16,6 +16,7 @@ import com.tuodao.bp.api.facade.common.BaseController;
 import com.tuodao.bp.api.facade.domain.ResultInput;
 import com.tuodao.bp.api.facade.domain.ResultOutput;
 import com.tuodao.bp.api.facade.service.DemoService;
+import com.tuodao.bp.model.input.demo.DemoInput;
 import com.tuodao.bp.model.output.member.DemoOuput;
 
 
@@ -75,6 +76,20 @@ public class ActiveController extends BaseController{
 		long start = System.currentTimeMillis();
 		
 		DemoOuput demo = demoService.getDemo("张三");
+		
+		System.out.println(System.currentTimeMillis() - start);
+		
+		return RespResult.<String> create().setContent(demo.toString());
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/entity", method = RequestMethod.POST)
+	public RespResult<String> entity(DemoInput input) {
+		long start = System.currentTimeMillis();
+		
+		logger.info("input = {}",input);
+		
+		DemoOuput demo = demoService.getEntity(input);
 		
 		System.out.println(System.currentTimeMillis() - start);
 		

@@ -9,7 +9,7 @@ import org.springframework.retry.annotation.EnableRetry;
 @EnableRetry
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(basePackages= {"com.tuodao.bp.api.facade.service"})
 public class ApiFacadeApplication {
 	
 	public static void main(String[] args) {

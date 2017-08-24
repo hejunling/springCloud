@@ -1,13 +1,10 @@
 ##eureka发现服务
 eureka:
   instance:
-    hostname: admin-server
     instanceId: ${server.port}[admin-server]
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 3
   client:
-    registerWithEureka: true
-    fetchRegistry: false
     registryFetchIntervalSeconds: 3
     instanceInfoReplicationIntervalSeconds: 3
     initialInstanceInfoReplicationIntervalSeconds: 4

@@ -90,7 +90,7 @@ public class CoreHandlerInterceptor extends HandlerInterceptorAdapter {
 			Enumeration<String> pns = request.getParameterNames();
 			while (pns.hasMoreElements()) {
 				String name = pns.nextElement();
-				String value = new String(request.getParameter(name).getBytes("ISO-8859-1"), "UTF-8");
+				String value = request.getParameter(name);
 				map.put(name, value);
 			}
 			validate.set(Boolean.FALSE);

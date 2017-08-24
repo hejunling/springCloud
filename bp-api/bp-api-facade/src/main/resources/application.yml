@@ -1,13 +1,10 @@
 ##eureka发现服务
 eureka:
   instance:
-    hostname: api-facade
     instanceId: ${server.port}[api-facade]
     leaseRenewalIntervalInSeconds: 1
     leaseExpirationDurationInSeconds: 3
   client:
-    registerWithEureka: true
-    fetchRegistry: false
     registryFetchIntervalSeconds: 3
     instanceInfoReplicationIntervalSeconds: 3
     initialInstanceInfoReplicationIntervalSeconds: 4
@@ -60,7 +57,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 1000000
+            timeoutInMilliseconds: 60000
 
 api-facade:
   ribbon:

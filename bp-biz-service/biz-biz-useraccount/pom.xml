@@ -17,7 +17,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>bp-biz-model</artifactId>
+			<artifactId>bp-cache</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
