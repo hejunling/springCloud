@@ -67,6 +67,7 @@ management:
 
 ##zuul配置
 zuul:
+  retryable: true
   routes:
     api-facade:
       path: /api/router/**
