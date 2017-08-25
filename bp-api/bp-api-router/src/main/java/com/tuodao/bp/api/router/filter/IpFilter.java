@@ -62,16 +62,16 @@ public class IpFilter extends AbstractFilter {
 		});
 
 		if(match) {
+			logger.info("ip：{} validate success ",clientIP);
+			ctx.setSendZuulResponse(true);
+			ctx.setResponseStatusCode(HTTP_SUCCESS_CODE);
+			ctx.set(SUCCESS, SUCCESS);
+		}else {
 			logger.info("ip：{} not allowed to visit this server",clientIP);
 			ctx.setSendZuulResponse(false);
 			ctx.setResponseStatusCode(FilterOrder.IP_NOT_ALLOWED);
 			ctx.set(SUCCESS, FAILED);
 			throw new FrameException(200010);
-		}else {
-			logger.info("ip：{} validate success ",clientIP);
-			ctx.setSendZuulResponse(true);
-			ctx.setResponseStatusCode(HTTP_SUCCESS_CODE);
-			ctx.set(SUCCESS, SUCCESS);
 		}
 		return null;
 	}
