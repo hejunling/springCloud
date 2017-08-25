@@ -13,7 +13,7 @@
   <modules>
     <module>bp-biz-model</module>
     <module>bp-biz-result</module>
-    <module>biz-biz-useraccount</module>
+    <module>bp-biz-useraccount</module>
   </modules>
   
   <dependencies>

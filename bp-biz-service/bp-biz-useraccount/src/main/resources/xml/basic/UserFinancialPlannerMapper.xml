@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tuodao.bp.useraccount.db.mapper.basic.UserFinancialPlannerMapper" >
+  <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
+    <id column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="moblie" property="moblie" jdbcType="VARCHAR" />
+    <result column="financial_planner_level" property="financialPlannerLevel" jdbcType="INTEGER" />
+    <result column="inviter_count" property="inviterCount" jdbcType="INTEGER" />
+    <result column="direct_inviter_count" property="directInviterCount" jdbcType="INTEGER" />
+    <result column="indirect_inviter" property="indirectInviter" jdbcType="INTEGER" />
+    <result column="vip1_count" property="vip1Count" jdbcType="INTEGER" />
+    <result column="dui_in_fund_count" property="duiInFundCount" jdbcType="DECIMAL" />
+    <result column="valid_time" property="validTime" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modify" property="gmtModify" jdbcType="TIMESTAMP" />
+    <result column="gmt_creator" property="gmtCreator" jdbcType="VARCHAR" />
+    <result column="gmt_modifier" property="gmtModifier" jdbcType="VARCHAR" />
+    <result column="is_del" property="isDel" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    user_id, moblie, financial_planner_level, inviter_count, direct_inviter_count, indirect_inviter, 
+    vip1_count, dui_in_fund_count, valid_time, gmt_create, gmt_modify, gmt_creator, gmt_modifier, 
+    is_del
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlannerExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user_financial_planner
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_financial_planner
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from user_financial_planner
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlannerExample" >
+    delete from user_financial_planner
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
+    insert into user_financial_planner (user_id, moblie, financial_planner_level, 
+      inviter_count, direct_inviter_count, indirect_inviter, 
+      vip1_count, dui_in_fund_count, valid_time, 
+      gmt_create, gmt_modify, gmt_creator, 
+      gmt_modifier, is_del)
+    values (#{userId,jdbcType=VARCHAR}, #{moblie,jdbcType=VARCHAR}, #{financialPlannerLevel,jdbcType=INTEGER}, 
+      #{inviterCount,jdbcType=INTEGER}, #{directInviterCount,jdbcType=INTEGER}, #{indirectInviter,jdbcType=INTEGER}, 
+      #{vip1Count,jdbcType=INTEGER}, #{duiInFundCount,jdbcType=DECIMAL}, #{validTime,jdbcType=INTEGER}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, 
+      #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
+    insert into user_financial_planner
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="moblie != null" >
+        moblie,
+      </if>
+      <if test="financialPlannerLevel != null" >
+        financial_planner_level,
+      </if>
+      <if test="inviterCount != null" >
+        inviter_count,
+      </if>
+      <if test="directInviterCount != null" >
+        direct_inviter_count,
+      </if>
+      <if test="indirectInviter != null" >
+        indirect_inviter,
+      </if>
+      <if test="vip1Count != null" >
+        vip1_count,
+      </if>
+      <if test="duiInFundCount != null" >
+        dui_in_fund_count,
+      </if>
+      <if test="validTime != null" >
+        valid_time,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModify != null" >
+        gmt_modify,
+      </if>
+      <if test="gmtCreator != null" >
+        gmt_creator,
+      </if>
+      <if test="gmtModifier != null" >
+        gmt_modifier,
+      </if>
+      <if test="isDel != null" >
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="moblie != null" >
+        #{moblie,jdbcType=VARCHAR},
+      </if>
+      <if test="financialPlannerLevel != null" >
+        #{financialPlannerLevel,jdbcType=INTEGER},
+      </if>
+      <if test="inviterCount != null" >
+        #{inviterCount,jdbcType=INTEGER},
+      </if>
+      <if test="directInviterCount != null" >
+        #{directInviterCount,jdbcType=INTEGER},
+      </if>
+      <if test="indirectInviter != null" >
+        #{indirectInviter,jdbcType=INTEGER},
+      </if>
+      <if test="vip1Count != null" >
+        #{vip1Count,jdbcType=INTEGER},
+      </if>
+      <if test="duiInFundCount != null" >
+        #{duiInFundCount,jdbcType=DECIMAL},
+      </if>
+      <if test="validTime != null" >
+        #{validTime,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModify != null" >
+        #{gmtModify,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtCreator != null" >
+        #{gmtCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtModifier != null" >
+        #{gmtModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlannerExample" resultType="java.lang.Integer" >
+    select count(*) from user_financial_planner
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update user_financial_planner
+    <set >
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.moblie != null" >
+        moblie = #{record.moblie,jdbcType=VARCHAR},
+      </if>
+      <if test="record.financialPlannerLevel != null" >
+        financial_planner_level = #{record.financialPlannerLevel,jdbcType=INTEGER},
+      </if>
+      <if test="record.inviterCount != null" >
+        inviter_count = #{record.inviterCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.directInviterCount != null" >
+        direct_inviter_count = #{record.directInviterCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.indirectInviter != null" >
+        indirect_inviter = #{record.indirectInviter,jdbcType=INTEGER},
+      </if>
+      <if test="record.vip1Count != null" >
+        vip1_count = #{record.vip1Count,jdbcType=INTEGER},
+      </if>
+      <if test="record.duiInFundCount != null" >
+        dui_in_fund_count = #{record.duiInFundCount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.validTime != null" >
+        valid_time = #{record.validTime,jdbcType=INTEGER},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModify != null" >
+        gmt_modify = #{record.gmtModify,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtCreator != null" >
+        gmt_creator = #{record.gmtCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gmtModifier != null" >
+        gmt_modifier = #{record.gmtModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDel != null" >
+        is_del = #{record.isDel,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update user_financial_planner
+    set user_id = #{record.userId,jdbcType=VARCHAR},
+      moblie = #{record.moblie,jdbcType=VARCHAR},
+      financial_planner_level = #{record.financialPlannerLevel,jdbcType=INTEGER},
+      inviter_count = #{record.inviterCount,jdbcType=INTEGER},
+      direct_inviter_count = #{record.directInviterCount,jdbcType=INTEGER},
+      indirect_inviter = #{record.indirectInviter,jdbcType=INTEGER},
+      vip1_count = #{record.vip1Count,jdbcType=INTEGER},
+      dui_in_fund_count = #{record.duiInFundCount,jdbcType=DECIMAL},
+      valid_time = #{record.validTime,jdbcType=INTEGER},
+      gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modify = #{record.gmtModify,jdbcType=TIMESTAMP},
+      gmt_creator = #{record.gmtCreator,jdbcType=VARCHAR},
+      gmt_modifier = #{record.gmtModifier,jdbcType=VARCHAR},
+      is_del = #{record.isDel,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
+    update user_financial_planner
+    <set >
+      <if test="moblie != null" >
+        moblie = #{moblie,jdbcType=VARCHAR},
+      </if>
+      <if test="financialPlannerLevel != null" >
+        financial_planner_level = #{financialPlannerLevel,jdbcType=INTEGER},
+      </if>
+      <if test="inviterCount != null" >
+        inviter_count = #{inviterCount,jdbcType=INTEGER},
+      </if>
+      <if test="directInviterCount != null" >
+        direct_inviter_count = #{directInviterCount,jdbcType=INTEGER},
+      </if>
+      <if test="indirectInviter != null" >
+        indirect_inviter = #{indirectInviter,jdbcType=INTEGER},
+      </if>
+      <if test="vip1Count != null" >
+        vip1_count = #{vip1Count,jdbcType=INTEGER},
+      </if>
+      <if test="duiInFundCount != null" >
+        dui_in_fund_count = #{duiInFundCount,jdbcType=DECIMAL},
+      </if>
+      <if test="validTime != null" >
+        valid_time = #{validTime,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModify != null" >
+        gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtCreator != null" >
+        gmt_creator = #{gmtCreator,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtModifier != null" >
+        gmt_modifier = #{gmtModifier,jdbcType=VARCHAR},
+      </if>
+      <if test="isDel != null" >
+        is_del = #{isDel,jdbcType=INTEGER},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
+    update user_financial_planner
+    set moblie = #{moblie,jdbcType=VARCHAR},
+      financial_planner_level = #{financialPlannerLevel,jdbcType=INTEGER},
+      inviter_count = #{inviterCount,jdbcType=INTEGER},
+      direct_inviter_count = #{directInviterCount,jdbcType=INTEGER},
+      indirect_inviter = #{indirectInviter,jdbcType=INTEGER},
+      vip1_count = #{vip1Count,jdbcType=INTEGER},
+      dui_in_fund_count = #{duiInFundCount,jdbcType=DECIMAL},
+      valid_time = #{validTime,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
+      gmt_creator = #{gmtCreator,jdbcType=VARCHAR},
+      gmt_modifier = #{gmtModifier,jdbcType=VARCHAR},
+      is_del = #{isDel,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+</mapper>
