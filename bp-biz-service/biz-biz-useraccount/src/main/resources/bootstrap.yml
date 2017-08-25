@@ -6,6 +6,11 @@ server:
 spring:
   application:
     name: biz-user-account
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://localhost:10006/  
 
 ##日志
 logging:

@@ -1,3 +1,8 @@
 spring:
   application:
     name: bp-eureka-server
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://localhost:10006/  

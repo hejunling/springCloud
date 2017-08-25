@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: bp-zipkin-server
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://localhost:10006/  
 
 logging:
   config: classpath:logback-spring.xml
