@@ -4,9 +4,9 @@ spring:
     config:
       server:
         git:
-          uri: http://gitlab.51tuodao.com/hechuanPreview/springCloud.git
-          searchPaths: clouds-parent/clouds-config-repo-git
-          username: hechuan@51tuodao.com
+          uri: http://gitlab.51tuodao.com/platform/platformV3.git
+          searchPaths: bp-biz-service/bp-biz-repo
+          username: hechuan
           password: hejunling
  
 ##rabbit mq,消息队列          
@@ -18,10 +18,10 @@ spring:
 
 ##redis 缓存    
   redis:
-    host: 118.178.59.220
+    host: 72.127.2.158
     port: 6379
-    password: redispass
-    database: 9
+    password: tuodao!@#321
+    database: 0
     timeout: 60000
     pool:
       max-wait: 50
@@ -30,10 +30,10 @@ spring:
 hikari:
   type: com.zaxxer.hikari.HikariDataSource
   master:
-    jdbc-url: jdbc:mysql://121.41.36.41:3306/kaka?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance_new?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
-    username: kaka
-    password: kaka
+    username: root
+    password: tuodao_mysql
     hikari:
       connection-test-query: SELECT 1
       maximum-pool-size: 30
@@ -42,10 +42,10 @@ hikari:
       validation-timeout: 60000
       idle-timeout: 60000
   slave1:
-    jdbc-url: jdbc:mysql://121.41.36.41:3306/kaka?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance_new?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
-    username: kaka
-    password: kaka
+    username: root
+    password: tuodao_mysql
     hikari:
       connection-test-query: SELECT 1
       maximum-pool-size: 30
@@ -54,10 +54,10 @@ hikari:
       validation-timeout: 60000
       idle-timeout: 60000
   slave2:
-    jdbc-url: jdbc:mysql://121.41.36.41:3306/kaka?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance_new?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
-    username: kaka
-    password: kaka
+    username: root
+    password: tuodao_mysql
     hikari:
       connection-test-query: SELECT 1
       maximum-pool-size: 30

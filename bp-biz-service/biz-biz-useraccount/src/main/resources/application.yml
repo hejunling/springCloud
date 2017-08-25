@@ -17,10 +17,10 @@ eureka:
 spring:
   ##redis 缓存    
   redis:
-    host: 118.178.59.220
+    host: 72.127.2.158
     port: 6379
-    password: redispass
-    database: 9
+    password: tuodao!@#321
+    database: 0
     timeout: 60000
     pool:
       max-wait: 50
@@ -29,13 +29,14 @@ spring:
   zipkin:
     base-url: http://localhost:10004
   sleuth:
-    enabled: true
+    enabled: false
     sampler:
       percentage: 1
   
   ##bootAdmin
   boot:
     admin:
+      autoRegistration: false
       url: http://localhost:10005
  
   ##重试    
@@ -70,10 +71,10 @@ management:
 hikari:
   type: com.zaxxer.hikari.HikariDataSource
   master:
-    jdbc-url: jdbc:mysql://121.41.36.41:3306/kaka?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance_new?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
-    username: kaka
-    password: kaka
+    username: root
+    password: tuodao_mysql
     hikari:
       connection-test-query: SELECT 1
       maximum-pool-size: 30
@@ -82,10 +83,10 @@ hikari:
       validation-timeout: 60000
       idle-timeout: 60000
   slave1:
-    jdbc-url: jdbc:mysql://121.41.36.41:3306/kaka?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance_new?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
-    username: kaka
-    password: kaka
+    username: root
+    password: tuodao_mysql
     hikari:
       connection-test-query: SELECT 1
       maximum-pool-size: 30
@@ -94,17 +95,17 @@ hikari:
       validation-timeout: 60000
       idle-timeout: 60000
   slave2:
-    jdbc-url: jdbc:mysql://121.41.36.41:3306/kaka?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance_new?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
-    username: kaka
-    password: kaka
+    username: root
+    password: tuodao_mysql
     hikari:
       connection-test-query: SELECT 1
       maximum-pool-size: 30
       minimum-idle: 3
       max-lifetime: 60000
       validation-timeout: 60000
-      idle-timeout: 60000      
+      idle-timeout: 60000
 
 ##mapper映射路径
 mybatis:
