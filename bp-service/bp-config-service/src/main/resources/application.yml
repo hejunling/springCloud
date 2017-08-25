@@ -11,10 +11,10 @@ spring:
  
 ##rabbit mq,消息队列          
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: hechuan
-    password: springcloud
+    host: 192.168.0.226
+    port: 5673
+    username: admin
+    password: admin
 
 ##redis 缓存    
   redis:
