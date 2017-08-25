@@ -11,11 +11,11 @@ spring:
     config:
       profile: dev
       label: master
-      uri: http://localhost:1006/
+      uri: http://localhost:10006/
 
 ##日志
 logging:
   config: classpath:logback-spring.xml
   path: F:/log/bp/apifacade/
   level:
-        com.tuodao.bp.api.facade: info       
+        com.tuodao.bp.api.facade: info

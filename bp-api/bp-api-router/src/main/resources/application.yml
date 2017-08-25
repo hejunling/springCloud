@@ -81,7 +81,7 @@ zuul:
 hikari:
   type: com.zaxxer.hikari.HikariDataSource
   master:
-    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance_new?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: tuodao_mysql
@@ -93,7 +93,7 @@ hikari:
       validation-timeout: 60000
       idle-timeout: 60000
   slave1:
-    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance_new?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: tuodao_mysql
@@ -105,7 +105,7 @@ hikari:
       validation-timeout: 60000
       idle-timeout: 60000
   slave2:
-    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance_new?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: tuodao_mysql
