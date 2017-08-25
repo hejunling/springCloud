@@ -60,6 +60,14 @@ hystrix:
           thread:
             timeoutInMilliseconds: 60000
 
+bp-api-facade:
+  ribbon:
+    ConnectTimeout: 2000
+    ReadTimeout: 2000
+    OkToRetryOnAllOperations: true
+    MaxAutoRetriesNextServer: 2
+    MaxAutoRetries: 2
+
 ##管理安全 
 management:
   security:
