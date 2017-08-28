@@ -14,6 +14,7 @@
     <module>bp-biz-model</module>
     <module>bp-biz-result</module>
     <module>bp-biz-useraccount</module>
+    <module>bp-biz-operation</module>
   </modules>
   
   <dependencies>
