@@ -1,0 +1,91 @@
+server:
+  port: 50001
+logging:
+  level: debug
+  path: /log/bp/bp-biz-msg
+
+spring:
+  application:
+    name: bp-biz-msg
+  redis:
+    host: 72.127.2.158
+    port: 6379
+    password: tuodao!@#321
+    pool:
+      max-active: 50
+    ##zipkin
+  zipkin:
+    base-url: http://localhost:10004
+  sleuth:
+    enabled: true
+    sampler:
+      percentage: 1
+  ##bootAdmin
+  boot:
+    admin:
+      url: http://localhost:10005
+
+  ##重试
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+
+#datasource
+hikari:
+  type: com.zaxxer.hikari.HikariDataSource
+  master:
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: tuodao_mysql
+    hikari:
+      connection-test-query: SELECT 1
+      maximum-pool-size: 30
+      minimum-idle: 3
+      max-lifetime: 60000
+      validation-timeout: 60000
+      idle-timeout: 60000
+  slave1:
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: tuodao_mysql
+    hikari:
+      connection-test-query: SELECT 1
+      maximum-pool-size: 30
+      minimum-idle: 3
+      max-lifetime: 60000
+      validation-timeout: 60000
+      idle-timeout: 60000
+  slave2:
+    jdbc-url: jdbc:mysql://72.127.2.158:3306/finance?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: tuodao_mysql
+    hikari:
+      connection-test-query: SELECT 1
+      maximum-pool-size: 30
+      minimum-idle: 3
+      max-lifetime: 60000
+      validation-timeout: 60000
+      idle-timeout: 60000
+#eureka服务配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://node1:10001/eureka/,http://node2:10002/eureka/,http://node3:10003/eureka/
+
+##管理安全
+management:
+  security:
+    enabled: false
+
+#短信相关配置
+configs:
+  sms:
+    enable: true
+    seconds-interval: 60    #秒数间隔；60秒内只能发送一次
+    top-number-limit: 10    #手机条数限制:单个号码一天内发送短信条数
+    top-ip-limit: 15        #IP限制：单个IP一天内发送短息条数
+    top-mobile-ip-limit: 6  #手机号码绑定IP限制：单个手机号在1天内最多可绑定6个IP发送短信
