@@ -44,6 +44,8 @@ spring:
      user: admin
      password: admin
      in-memory: true
+     packages:
+       trust-all: true
      pool:
        enabled: false
  
