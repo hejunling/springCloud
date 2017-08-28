@@ -31,4 +31,15 @@ public class DemoServiceFallback implements DemoService {
 		out.setOutName("fallbackName--input");
 		return out;
 	}
+	
+	@Override
+	public DemoOuput process(String address) {
+		
+			logger.info("----fallback address = {}",address);
+		
+		DemoOuput out = new DemoOuput();
+		out.setOutAddress("fallbackAddress--input-address-mq");
+		out.setOutName("fallbackName--input-address-mq");
+		return out;
+	}
 }

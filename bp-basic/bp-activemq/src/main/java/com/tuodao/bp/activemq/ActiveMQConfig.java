@@ -7,11 +7,9 @@ import org.apache.activemq.RedeliveryPolicy;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 import org.springframework.jms.config.JmsListenerContainerFactory;
-import org.springframework.jms.core.JmsMessagingTemplate;
 
 /**
  * amq配置
@@ -44,12 +42,6 @@ public class ActiveMQConfig {
 		bean.setConnectionFactory(activeMQConnectionFactory);
 		return bean;
 	}
-	
-	@Bean
-	@Primary
-	public JmsMessagingTemplate jmsMessagingTemplate() {
-		return new JmsMessagingTemplate();
-	} 
 	
 	@Bean
     public Queue queue() {

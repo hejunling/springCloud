@@ -17,4 +17,7 @@ public interface DemoService {
 	
 	@RequestMapping(value="/demo/entity",method=RequestMethod.POST)
 	public DemoOuput getEntity(@RequestBody DemoInput demoInput);
+	
+	@RequestMapping(value="/demo/mq",method=RequestMethod.POST)
+	public DemoOuput process(@RequestParam(value="address") String address);
 }

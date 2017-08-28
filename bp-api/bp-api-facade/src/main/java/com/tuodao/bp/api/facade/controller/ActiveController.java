@@ -95,4 +95,18 @@ public class ActiveController extends BaseController{
 		
 		return RespResult.<String> create().setContent(demo.toString());
 	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/mq", method = RequestMethod.POST)
+	public RespResult<String> mq(@RequestParam String address) {
+		long start = System.currentTimeMillis();
+		
+		logger.info("address = {}",address);
+		
+		DemoOuput demo = demoService.process(address);
+		
+		System.out.println(System.currentTimeMillis() - start);
+		
+		return RespResult.<String> create().setContent(demo.toString());
+	}
 }

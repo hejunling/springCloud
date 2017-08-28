@@ -38,7 +38,14 @@ spring:
     admin:
       autoRegistration: false
       url: http://localhost:10005
- 
+
+  activemq:
+     broker-url: tcp://192.168.0.226:61616
+     user: admin
+     password: admin
+     in-memory: true
+     pool:
+       enabled: false
   ##重试    
   cloud:
     loadbalancer:
