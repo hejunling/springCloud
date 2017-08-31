@@ -18,6 +18,7 @@ import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.tuodao.bp.model.input.demo.DemoDbInput;
 import com.tuodao.bp.model.output.member.DemoBizOutput;
+import com.tuodao.bp.result.exception.BizFeignException;
 import com.tuodao.bp.result.exception.MicroServiceException;
 import com.tuodao.bp.useraccount.constant.UserAccountExceptionConstant;
 import com.tuodao.bp.useraccount.db.mapper.basic.DemoMapper;
@@ -164,12 +165,12 @@ public class DemoServiceImpl implements IDemoService {
 	 * {@link IDemoService#testTransactional(DemoDbInput)}
 	 */
 	@Override
-	public int testTransactional(DemoDbInput input) {
+	public int testTransactional(DemoDbInput input){
 		Demo demo = new Demo();
 		BeanUtils.copyProperties(input, demo);
 		int insertSelective = demoMapper.insertSelective(demo);
 		if (StringUtils.equals(input.getPhone(), "1366666")) {
-			throw new MicroServiceException(UserAccountExceptionConstant.USER_ACCOUNT_TRANSACTION_EXCEPTION);
+			throw new BizFeignException(UserAccountExceptionConstant.USER_ACCOUNT_TRANSACTION_EXCEPTION);
 		}
 		logger.debug("testTransactional Influence rows = [{}]",insertSelective);
 		return insertSelective;
