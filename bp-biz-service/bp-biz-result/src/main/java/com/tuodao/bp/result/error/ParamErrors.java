@@ -1,4 +1,4 @@
-package com.tuodao.bp.api.core.error;
+package com.tuodao.bp.result.error;
 
 import java.util.List;
 

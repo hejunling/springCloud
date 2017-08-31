@@ -1,7 +1,7 @@
-package com.tuodao.bp.api.core.exception;
+package com.tuodao.bp.result.exception;
 
-import com.tuodao.bp.api.core.constant.FrameConstant;
-import com.tuodao.bp.api.core.error.ParamErrors;
+import com.tuodao.bp.result.constant.ResultConstant;
+import com.tuodao.bp.result.error.ParamErrors;
 
 /**
  * 参数检验异常
@@ -20,8 +20,8 @@ public class ParamException extends FrameException {
 	private static final long serialVersionUID = 1L;
 
 	/** 错误代码 */
-	private int code = FrameConstant.PARAMETER_CHECK_FAILED;
-
+	private int code = ResultConstant.PARAMETER_CHECK_FAILED;
+	
 	/** 错误列表 */
 	private ParamErrors errors;
 

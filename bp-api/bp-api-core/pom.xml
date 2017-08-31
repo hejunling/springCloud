@@ -21,6 +21,12 @@
 			<version>${project.version}</version>
 		</dependency>
 		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>bp-biz-result</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
 	    <dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>

@@ -26,6 +26,11 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>bp-biz-result</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>

@@ -34,23 +34,24 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 		
-		<table tableName="account_finance" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="account_finance_daily" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="account_funds" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="account_income_detail" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="bussines_info" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="config_dictonary" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="uesr_bussiness" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_deposit_info" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_feedback" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_financial_planner" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_info" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_info_detail" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_info_extend" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_lable" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_login_log" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_vip_info" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
-		<table tableName="user_vip_info_his" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
+<!-- 		<table tableName="account_finance" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="account_finance_daily" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="account_funds" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="account_income_detail" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="bussines_info" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="config_dictonary" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="uesr_bussiness" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_deposit_info" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_feedback" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_financial_planner" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_info" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_info_detail" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_info_extend" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_lable" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_login_log" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_vip_info" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+<!-- 		<table tableName="user_vip_info_his" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/> -->
+			<table tableName="demo" enableCountByExample="true" enableSelectByExample="true" enableUpdateByExample="true" enableDeleteByExample="true"/>
 	</context>
 
 </generatorConfiguration>

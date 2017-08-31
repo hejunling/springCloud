@@ -2,6 +2,8 @@ package com.tuodao.bp.api.core.exception;
 
 import java.util.List;
 
+import com.tuodao.bp.result.exception.FrameException;
+
 /**
  * 聚合exception
  * @author hechuan

@@ -18,7 +18,7 @@ import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
 import com.tuodao.bp.api.core.constant.RequestConstant;
 import com.tuodao.bp.api.core.constant.ResponseConstant;
-import com.tuodao.bp.api.core.exception.FrameException;
+import com.tuodao.bp.result.exception.FrameException;
 
 /**
  * 拦截器

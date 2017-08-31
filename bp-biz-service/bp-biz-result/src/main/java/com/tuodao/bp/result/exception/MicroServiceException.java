@@ -1,15 +1,15 @@
-package com.tuodao.bp.api.core.exception;
+package com.tuodao.bp.result.exception;
 
 /**
- * 框架异常
+ * 微服务异常
  * 
  * @author hechuan
  *
- * @created 2017年5月25日
+ * @created 2017年5月31日
  *
  * @version 1.0.0
  */
-public class FrameException extends RuntimeException {
+public class MicroServiceException extends RuntimeException {
 
 	/**
 	 * 
@@ -22,22 +22,22 @@ public class FrameException extends RuntimeException {
 	/** 响应消息 */
 	private String msg;
 
-	public FrameException() {
+	public MicroServiceException() {
 		super();
 	}
 
-	public FrameException(int code) {
+	public MicroServiceException(int code) {
 		this();
 		this.code = code;
 	}
 
-	public FrameException(int code, String msg) {
+	public MicroServiceException(int code, String msg) {
 		super(msg);
 		this.code = code;
 		this.msg = msg;
 	}
 
-	public FrameException(int code, String msg, Throwable e) {
+	public MicroServiceException(int code, String msg, Throwable e) {
 		super(msg, e);
 		this.code = code;
 		this.msg = msg;

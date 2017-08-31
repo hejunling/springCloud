@@ -19,10 +19,6 @@ public class FrameConstant {
 	public static final int SYSTEM_EXCEPTION_CODE = 100001;
 	/** 系统异常MSG */
 	public static final String SYSTEM_EXCEPTION_MSG = "系统异常";
-	/** 参数异常CODE */
-	public static final int PARAMETER_CHECK_FAILED = 100002;
-	/** 参数异常MSG */
-	public static final String PARAMETER_EXCEPTION_MSG = "参数异常";
 	/** 分发请求异常CODE */
 	public static final int FACADE_REQUEST_ERROR_CODE = 100003;
 	/** 分发请求MSG */

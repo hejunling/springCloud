@@ -32,6 +32,11 @@
             <artifactId>bp-api-core</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>bp-biz-result</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>

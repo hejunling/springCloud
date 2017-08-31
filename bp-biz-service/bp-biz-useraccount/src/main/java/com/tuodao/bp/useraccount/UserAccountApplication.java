@@ -1,26 +1,16 @@
 package com.tuodao.bp.useraccount;
 
-import javax.servlet.Filter;
-
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.filter.CharacterEncodingFilter;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+@MapperScan(basePackages= {"com.tuodao.bp.useraccount.db"})
 public class UserAccountApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UserAccountApplication.class, args);
 	}
 	
-	
-	@Bean
-	public Filter characterEncodingFilter() {
-		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-		characterEncodingFilter.setEncoding("utf-8");
-		characterEncodingFilter.setForceEncoding(true);
-		return characterEncodingFilter;
-	}
 }

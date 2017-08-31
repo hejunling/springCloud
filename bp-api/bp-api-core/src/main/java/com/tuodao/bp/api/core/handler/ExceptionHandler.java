@@ -16,14 +16,14 @@ import com.google.common.base.Function;
 import com.google.common.collect.FluentIterable;
 import com.tuodao.bp.api.core.constant.FrameConstant;
 import com.tuodao.bp.api.core.error.FacadeError;
-import com.tuodao.bp.api.core.error.ParamError;
 import com.tuodao.bp.api.core.exception.FacadeException;
-import com.tuodao.bp.api.core.exception.FrameException;
-import com.tuodao.bp.api.core.exception.MicroServiceException;
-import com.tuodao.bp.api.core.exception.ParamException;
 import com.tuodao.bp.api.core.response.RespResult;
 import com.tuodao.bp.cache.basic.BasicDataDao;
 import com.tuodao.bp.db.model.basic.SystemBasicData;
+import com.tuodao.bp.result.error.ParamError;
+import com.tuodao.bp.result.exception.FrameException;
+import com.tuodao.bp.result.exception.MicroServiceException;
+import com.tuodao.bp.result.exception.ParamException;
 
 /**
  * 异常收集

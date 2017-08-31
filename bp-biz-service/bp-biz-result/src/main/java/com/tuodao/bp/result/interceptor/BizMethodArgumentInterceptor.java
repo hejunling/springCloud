@@ -1,4 +1,4 @@
-package com.tuodao.bp.api.core.spring;
+package com.tuodao.bp.result.interceptor;
 
 import java.io.IOException;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.MethodParameter;
@@ -18,48 +19,45 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.tuodao.bp.api.core.constant.RequestConstant;
+import com.tuodao.bp.result.constant.EncodeConstant;
 import com.tuodao.bp.result.error.ParamError;
 import com.tuodao.bp.result.error.ParamErrors;
 import com.tuodao.bp.result.exception.ParamException;
 
 /**
- * 方法拦截(参数检查，判断)
+ * 业务方法参数判断
  * 
- * @author hechuan
+ * @author hechun
  *
- * @created 2017年5月24日
+ * @created 2017年8月29日
  *
- * @version 1.0.0
+ * @since 1.0.0
  */
-public class CoreHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
+public class BizMethodArgumentInterceptor implements HandlerMethodArgumentResolver {
 
-	private static final Logger logger = LoggerFactory.getLogger(CoreHandlerMethodArgumentResolver.class);
-
+	private static final Logger logger = LoggerFactory.getLogger(BizMethodArgumentInterceptor.class);
+	
 	/**
 	 * 错误列表
 	 */
 	private ParamErrors errors;
-
+	
 	@Override
 	public boolean supportsParameter(MethodParameter parameter) {
-
 		return true;
 	}
 
 	@Override
 	public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
 			NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-
+		
 		HttpServletRequest request = webRequest.getNativeRequest(HttpServletRequest.class);
 
 		Class<?> clazz = parameter.getParameterType();
 		logger.info("clazz : {}", clazz);
 
-		String requestJson = (String) request.getAttribute(RequestConstant.REQUEST_CONTENT);
-		String format = (String) request.getAttribute(RequestConstant.FORMAT);
-		Object input = convertToInput(requestJson, clazz, format);
+		String requestJson = IOUtils.toString(request.getInputStream(), EncodeConstant.ENCODING);
+		Object input = convertToInput(requestJson, clazz);
 
 		// 校验参数
 		final WebDataBinder binder = binderFactory.createBinder(webRequest, input, clazz.getName());
@@ -99,12 +97,10 @@ public class CoreHandlerMethodArgumentResolver implements HandlerMethodArgumentR
 	 *            具体controller的参数类型泛型
 	 * @return 反序列化后实体
 	 */
-	private <T> T convertToInput(String requestJson, Class<T> clazz, String format) {
-
-		ObjectReader objectReader = getReader(format);
+	private <T> T convertToInput(String requestJson, Class<T> clazz) {
 
 		try {
-			return objectReader.forType(clazz).readValue(requestJson);
+			return Jackson2ObjectMapperBuilder.json().build().reader().forType(clazz).readValue(requestJson);
 		} catch (IOException e) {
 			logger.error(e.getMessage(), e);
 			return null;
@@ -112,21 +108,5 @@ public class CoreHandlerMethodArgumentResolver implements HandlerMethodArgumentR
 
 	}
 
-	/**
-	 * 通过format，获取解析对象是json还是xml
-	 * 
-	 * @param format
-	 *            json|xml
-	 * @return
-	 */
-	private ObjectReader getReader(String format) {
-		ObjectReader objectReader = null;
-		if (RequestConstant.FORMATE_JSON.equalsIgnoreCase(format)) {
-			objectReader = Jackson2ObjectMapperBuilder.json().build().reader();
-		} else if (RequestConstant.FORMATE_XML.equalsIgnoreCase(format)) {
-			objectReader = Jackson2ObjectMapperBuilder.xml().build().reader();
-		}
-		return objectReader;
-	}
 
 }

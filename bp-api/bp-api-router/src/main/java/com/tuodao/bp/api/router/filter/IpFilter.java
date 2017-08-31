@@ -14,7 +14,6 @@ import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.common.collect.FluentIterable;
 import com.netflix.zuul.context.RequestContext;
-import com.tuodao.bp.api.core.exception.FrameException;
 import com.tuodao.bp.cache.basic.BasicDataDao;
 import com.tuodao.bp.cache.constant.RedisConstans;
 import com.tuodao.bp.db.model.basic.SystemBasicData;
@@ -71,7 +70,6 @@ public class IpFilter extends AbstractFilter {
 			ctx.setSendZuulResponse(false);
 			ctx.setResponseStatusCode(FilterOrder.IP_NOT_ALLOWED);
 			ctx.set(SUCCESS, FAILED);
-			throw new FrameException(200010);
 		}
 		return null;
 	}

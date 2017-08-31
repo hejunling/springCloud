@@ -1,4 +1,4 @@
-package com.tuodao.bp.api.core.error;
+package com.tuodao.bp.result.error;
 
 import com.google.common.base.MoreObjects;
 

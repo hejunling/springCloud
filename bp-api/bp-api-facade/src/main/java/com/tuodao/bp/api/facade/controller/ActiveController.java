@@ -17,6 +17,7 @@ import com.tuodao.bp.api.facade.domain.ResultInput;
 import com.tuodao.bp.api.facade.domain.ResultOutput;
 import com.tuodao.bp.api.facade.service.DemoService;
 import com.tuodao.bp.model.input.demo.DemoInput;
+import com.tuodao.bp.model.input.demo.ParamInput;
 import com.tuodao.bp.model.output.member.DemoOuput;
 
 
@@ -104,6 +105,25 @@ public class ActiveController extends BaseController{
 		logger.info("address = {}",address);
 		
 		DemoOuput demo = demoService.process(address);
+		
+		System.out.println(System.currentTimeMillis() - start);
+		
+		return RespResult.<String> create().setContent(demo.toString());
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/validate", method = RequestMethod.POST)
+	public RespResult<String> validate(@RequestParam String address) {
+		long start = System.currentTimeMillis();
+		
+		logger.info("address = {}",address);
+		
+		ParamInput input = new ParamInput();
+		input.setKey("key-param");
+		input.setValue("value - param");
+		input.setAge(0);
+		
+		DemoOuput demo = demoService.validate(input);
 		
 		System.out.println(System.currentTimeMillis() - start);
 		
