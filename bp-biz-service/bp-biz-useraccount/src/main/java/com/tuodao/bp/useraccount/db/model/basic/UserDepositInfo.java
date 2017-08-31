@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class UserDepositInfo implements Serializable {
-    private String userId;
+    private Integer id;
 
-    private String moblie;
+    private String userId;
 
     private String realName;
 
@@ -22,13 +22,21 @@ public class UserDepositInfo implements Serializable {
 
     private Date gmtModify;
 
-    private String gmtCreator;
-
     private String gmtModifier;
+
+    private String gmtCreator;
 
     private Integer isDel;
 
     private static final long serialVersionUID = 1L;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getUserId() {
         return userId;
@@ -36,14 +44,6 @@ public class UserDepositInfo implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
-    }
-
-    public String getMoblie() {
-        return moblie;
-    }
-
-    public void setMoblie(String moblie) {
-        this.moblie = moblie == null ? null : moblie.trim();
     }
 
     public String getRealName() {
@@ -102,20 +102,20 @@ public class UserDepositInfo implements Serializable {
         this.gmtModify = gmtModify;
     }
 
-    public String getGmtCreator() {
-        return gmtCreator;
-    }
-
-    public void setGmtCreator(String gmtCreator) {
-        this.gmtCreator = gmtCreator == null ? null : gmtCreator.trim();
-    }
-
     public String getGmtModifier() {
         return gmtModifier;
     }
 
     public void setGmtModifier(String gmtModifier) {
         this.gmtModifier = gmtModifier == null ? null : gmtModifier.trim();
+    }
+
+    public String getGmtCreator() {
+        return gmtCreator;
+    }
+
+    public void setGmtCreator(String gmtCreator) {
+        this.gmtCreator = gmtCreator == null ? null : gmtCreator.trim();
     }
 
     public Integer getIsDel() {

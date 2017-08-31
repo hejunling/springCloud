@@ -3,18 +3,16 @@ package com.tuodao.bp.useraccount.db.model.basic;
 import java.io.Serializable;
 import java.util.Date;
 
-public class ConfigDictonary implements Serializable {
+public class UserLabel implements Serializable {
     private Integer id;
 
-    private String dicType;
+    private String userId;
 
-    private String dicCode;
+    private String userLabel;
 
-    private String dicName;
+    private Integer labelType;
 
-    private String dicDescription;
-
-    private Integer dicStatus;
+    private String renark;
 
     private Date gmtCreate;
 
@@ -36,44 +34,36 @@ public class ConfigDictonary implements Serializable {
         this.id = id;
     }
 
-    public String getDicType() {
-        return dicType;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setDicType(String dicType) {
-        this.dicType = dicType == null ? null : dicType.trim();
+    public void setUserId(String userId) {
+        this.userId = userId == null ? null : userId.trim();
     }
 
-    public String getDicCode() {
-        return dicCode;
+    public String getUserLabel() {
+        return userLabel;
     }
 
-    public void setDicCode(String dicCode) {
-        this.dicCode = dicCode == null ? null : dicCode.trim();
+    public void setUserLabel(String userLabel) {
+        this.userLabel = userLabel == null ? null : userLabel.trim();
     }
 
-    public String getDicName() {
-        return dicName;
+    public Integer getLabelType() {
+        return labelType;
     }
 
-    public void setDicName(String dicName) {
-        this.dicName = dicName == null ? null : dicName.trim();
+    public void setLabelType(Integer labelType) {
+        this.labelType = labelType;
     }
 
-    public String getDicDescription() {
-        return dicDescription;
+    public String getRenark() {
+        return renark;
     }
 
-    public void setDicDescription(String dicDescription) {
-        this.dicDescription = dicDescription == null ? null : dicDescription.trim();
-    }
-
-    public Integer getDicStatus() {
-        return dicStatus;
-    }
-
-    public void setDicStatus(Integer dicStatus) {
-        this.dicStatus = dicStatus;
+    public void setRenark(String renark) {
+        this.renark = renark == null ? null : renark.trim();
     }
 
     public Date getGmtCreate() {

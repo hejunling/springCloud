@@ -10,7 +10,7 @@ public interface UserDepositInfoMapper {
 
     int deleteByExample(UserDepositInfoExample example);
 
-    int deleteByPrimaryKey(String userId);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(UserDepositInfo record);
 
@@ -18,7 +18,7 @@ public interface UserDepositInfoMapper {
 
     List<UserDepositInfo> selectByExample(UserDepositInfoExample example);
 
-    UserDepositInfo selectByPrimaryKey(String userId);
+    UserDepositInfo selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") UserDepositInfo record, @Param("example") UserDepositInfoExample example);
 

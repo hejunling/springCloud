@@ -4,7 +4,6 @@
   <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.AccountFinanceDaily" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="moblie" property="moblie" jdbcType="VARCHAR" />
     <result column="deposit_no" property="depositNo" jdbcType="VARCHAR" />
     <result column="total_fund" property="totalFund" jdbcType="DECIMAL" />
     <result column="total_earnings" property="totalEarnings" jdbcType="DECIMAL" />
@@ -88,11 +87,11 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, moblie, deposit_no, total_fund, total_earnings, dui_in_fund, usable_fund, 
-    due_in_principal, due_in_interest, freeze_fund, can_withdraw_fund, total_recharge, 
-    total_withdraw, investment_times, investment_amount, return_amount, coupons_amount, 
-    usable_scores, usable_coupons, usable_interest, gmt_create, gmt_modify, gmt_creator, 
-    gmt_modifier, is_del
+    id, user_id, deposit_no, total_fund, total_earnings, dui_in_fund, usable_fund, due_in_principal, 
+    due_in_interest, freeze_fund, can_withdraw_fund, total_recharge, total_withdraw, 
+    investment_times, investment_amount, return_amount, coupons_amount, usable_scores, 
+    usable_coupons, usable_interest, gmt_create, gmt_modify, gmt_creator, gmt_modifier, 
+    is_del
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.AccountFinanceDailyExample" >
     select
@@ -125,24 +124,24 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.AccountFinanceDaily" >
-    insert into account_finance_daily (id, user_id, moblie, 
-      deposit_no, total_fund, total_earnings, 
-      dui_in_fund, usable_fund, due_in_principal, 
-      due_in_interest, freeze_fund, can_withdraw_fund, 
-      total_recharge, total_withdraw, investment_times, 
-      investment_amount, return_amount, coupons_amount, 
-      usable_scores, usable_coupons, usable_interest, 
-      gmt_create, gmt_modify, gmt_creator, 
-      gmt_modifier, is_del)
-    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{moblie,jdbcType=VARCHAR}, 
-      #{depositNo,jdbcType=VARCHAR}, #{totalFund,jdbcType=DECIMAL}, #{totalEarnings,jdbcType=DECIMAL}, 
-      #{duiInFund,jdbcType=DECIMAL}, #{usableFund,jdbcType=DECIMAL}, #{dueInPrincipal,jdbcType=DECIMAL}, 
-      #{dueInInterest,jdbcType=DECIMAL}, #{freezeFund,jdbcType=DECIMAL}, #{canWithdrawFund,jdbcType=DECIMAL}, 
-      #{totalRecharge,jdbcType=DECIMAL}, #{totalWithdraw,jdbcType=DECIMAL}, #{investmentTimes,jdbcType=INTEGER}, 
-      #{investmentAmount,jdbcType=DECIMAL}, #{returnAmount,jdbcType=DECIMAL}, #{couponsAmount,jdbcType=DECIMAL}, 
-      #{usableScores,jdbcType=INTEGER}, #{usableCoupons,jdbcType=INTEGER}, #{usableInterest,jdbcType=INTEGER}, 
-      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, 
-      #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER})
+    insert into account_finance_daily (id, user_id, deposit_no, 
+      total_fund, total_earnings, dui_in_fund, 
+      usable_fund, due_in_principal, due_in_interest, 
+      freeze_fund, can_withdraw_fund, total_recharge, 
+      total_withdraw, investment_times, investment_amount, 
+      return_amount, coupons_amount, usable_scores, 
+      usable_coupons, usable_interest, gmt_create, 
+      gmt_modify, gmt_creator, gmt_modifier, 
+      is_del)
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{depositNo,jdbcType=VARCHAR}, 
+      #{totalFund,jdbcType=DECIMAL}, #{totalEarnings,jdbcType=DECIMAL}, #{duiInFund,jdbcType=DECIMAL}, 
+      #{usableFund,jdbcType=DECIMAL}, #{dueInPrincipal,jdbcType=DECIMAL}, #{dueInInterest,jdbcType=DECIMAL}, 
+      #{freezeFund,jdbcType=DECIMAL}, #{canWithdrawFund,jdbcType=DECIMAL}, #{totalRecharge,jdbcType=DECIMAL}, 
+      #{totalWithdraw,jdbcType=DECIMAL}, #{investmentTimes,jdbcType=INTEGER}, #{investmentAmount,jdbcType=DECIMAL}, 
+      #{returnAmount,jdbcType=DECIMAL}, #{couponsAmount,jdbcType=DECIMAL}, #{usableScores,jdbcType=INTEGER}, 
+      #{usableCoupons,jdbcType=INTEGER}, #{usableInterest,jdbcType=INTEGER}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, #{gmtModifier,jdbcType=VARCHAR}, 
+      #{isDel,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.AccountFinanceDaily" >
     insert into account_finance_daily
@@ -152,9 +151,6 @@
       </if>
       <if test="userId != null" >
         user_id,
-      </if>
-      <if test="moblie != null" >
-        moblie,
       </if>
       <if test="depositNo != null" >
         deposit_no,
@@ -232,9 +228,6 @@
       </if>
       <if test="userId != null" >
         #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="moblie != null" >
-        #{moblie,jdbcType=VARCHAR},
       </if>
       <if test="depositNo != null" >
         #{depositNo,jdbcType=VARCHAR},
@@ -322,9 +315,6 @@
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
-      <if test="record.moblie != null" >
-        moblie = #{record.moblie,jdbcType=VARCHAR},
-      </if>
       <if test="record.depositNo != null" >
         deposit_no = #{record.depositNo,jdbcType=VARCHAR},
       </if>
@@ -403,7 +393,6 @@
     update account_finance_daily
     set id = #{record.id,jdbcType=BIGINT},
       user_id = #{record.userId,jdbcType=VARCHAR},
-      moblie = #{record.moblie,jdbcType=VARCHAR},
       deposit_no = #{record.depositNo,jdbcType=VARCHAR},
       total_fund = #{record.totalFund,jdbcType=DECIMAL},
       total_earnings = #{record.totalEarnings,jdbcType=DECIMAL},
@@ -436,9 +425,6 @@
     <set >
       <if test="userId != null" >
         user_id = #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="moblie != null" >
-        moblie = #{moblie,jdbcType=VARCHAR},
       </if>
       <if test="depositNo != null" >
         deposit_no = #{depositNo,jdbcType=VARCHAR},
@@ -515,7 +501,6 @@
   <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.AccountFinanceDaily" >
     update account_finance_daily
     set user_id = #{userId,jdbcType=VARCHAR},
-      moblie = #{moblie,jdbcType=VARCHAR},
       deposit_no = #{depositNo,jdbcType=VARCHAR},
       total_fund = #{totalFund,jdbcType=DECIMAL},
       total_earnings = #{totalEarnings,jdbcType=DECIMAL},

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.tuodao.bp.useraccount.db.mapper.basic.UesrBussinessMapper" >
-  <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.UesrBussiness" >
+<mapper namespace="com.tuodao.bp.useraccount.db.mapper.basic.UserBusinessMapper" >
+  <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.UserBusiness" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="moblie" property="moblie" jdbcType="VARCHAR" />
     <result column="bussiness_code" property="bussinessCode" jdbcType="INTEGER" />
     <result column="open_type" property="openType" jdbcType="INTEGER" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
@@ -73,16 +72,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, moblie, bussiness_code, open_type, remark, gmt_create, gmt_modify, gmt_creator, 
+    id, user_id, bussiness_code, open_type, remark, gmt_create, gmt_modify, gmt_creator, 
     gmt_modifier, is_del
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.UesrBussinessExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserBusinessExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from uesr_bussiness
+    from user_business
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -93,40 +92,37 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from uesr_bussiness
+    from user_business
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from uesr_bussiness
+    delete from user_business
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UesrBussinessExample" >
-    delete from uesr_bussiness
+  <delete id="deleteByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserBusinessExample" >
+    delete from user_business
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.UesrBussiness" >
-    insert into uesr_bussiness (id, user_id, moblie, 
-      bussiness_code, open_type, remark, 
-      gmt_create, gmt_modify, gmt_creator, 
-      gmt_modifier, is_del)
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{moblie,jdbcType=VARCHAR}, 
-      #{bussinessCode,jdbcType=INTEGER}, #{openType,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
-      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, 
-      #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER})
+  <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserBusiness" >
+    insert into user_business (id, user_id, bussiness_code, 
+      open_type, remark, gmt_create, 
+      gmt_modify, gmt_creator, gmt_modifier, 
+      is_del)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{bussinessCode,jdbcType=INTEGER}, 
+      #{openType,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, #{gmtModifier,jdbcType=VARCHAR}, 
+      #{isDel,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UesrBussiness" >
-    insert into uesr_bussiness
+  <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserBusiness" >
+    insert into user_business
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
       </if>
       <if test="userId != null" >
         user_id,
-      </if>
-      <if test="moblie != null" >
-        moblie,
       </if>
       <if test="bussinessCode != null" >
         bussiness_code,
@@ -160,9 +156,6 @@
       <if test="userId != null" >
         #{userId,jdbcType=VARCHAR},
       </if>
-      <if test="moblie != null" >
-        #{moblie,jdbcType=VARCHAR},
-      </if>
       <if test="bussinessCode != null" >
         #{bussinessCode,jdbcType=INTEGER},
       </if>
@@ -189,23 +182,20 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UesrBussinessExample" resultType="java.lang.Integer" >
-    select count(*) from uesr_bussiness
+  <select id="countByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserBusinessExample" resultType="java.lang.Integer" >
+    select count(*) from user_business
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update uesr_bussiness
+    update user_business
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=VARCHAR},
-      </if>
-      <if test="record.moblie != null" >
-        moblie = #{record.moblie,jdbcType=VARCHAR},
       </if>
       <if test="record.bussinessCode != null" >
         bussiness_code = #{record.bussinessCode,jdbcType=INTEGER},
@@ -237,10 +227,9 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update uesr_bussiness
+    update user_business
     set id = #{record.id,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=VARCHAR},
-      moblie = #{record.moblie,jdbcType=VARCHAR},
       bussiness_code = #{record.bussinessCode,jdbcType=INTEGER},
       open_type = #{record.openType,jdbcType=INTEGER},
       remark = #{record.remark,jdbcType=VARCHAR},
@@ -253,14 +242,11 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UesrBussiness" >
-    update uesr_bussiness
+  <update id="updateByPrimaryKeySelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserBusiness" >
+    update user_business
     <set >
       <if test="userId != null" >
         user_id = #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="moblie != null" >
-        moblie = #{moblie,jdbcType=VARCHAR},
       </if>
       <if test="bussinessCode != null" >
         bussiness_code = #{bussinessCode,jdbcType=INTEGER},
@@ -289,10 +275,9 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.UesrBussiness" >
-    update uesr_bussiness
+  <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserBusiness" >
+    update user_business
     set user_id = #{userId,jdbcType=VARCHAR},
-      moblie = #{moblie,jdbcType=VARCHAR},
       bussiness_code = #{bussinessCode,jdbcType=INTEGER},
       open_type = #{openType,jdbcType=INTEGER},
       remark = #{remark,jdbcType=VARCHAR},

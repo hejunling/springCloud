@@ -1,18 +1,17 @@
 package com.tuodao.bp.useraccount.db.model.basic;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class AccountIncomeDetail implements Serializable {
-    private Long id;
+    private Integer id;
 
     private String userId;
 
-    private String moblie;
-
     private String incomeType;
 
-    private Double incomeMoney;
+    private BigDecimal incomeMoney;
 
     private String remark;
 
@@ -28,11 +27,11 @@ public class AccountIncomeDetail implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -44,14 +43,6 @@ public class AccountIncomeDetail implements Serializable {
         this.userId = userId == null ? null : userId.trim();
     }
 
-    public String getMoblie() {
-        return moblie;
-    }
-
-    public void setMoblie(String moblie) {
-        this.moblie = moblie == null ? null : moblie.trim();
-    }
-
     public String getIncomeType() {
         return incomeType;
     }
@@ -60,11 +51,11 @@ public class AccountIncomeDetail implements Serializable {
         this.incomeType = incomeType == null ? null : incomeType.trim();
     }
 
-    public Double getIncomeMoney() {
+    public BigDecimal getIncomeMoney() {
         return incomeMoney;
     }
 
-    public void setIncomeMoney(Double incomeMoney) {
+    public void setIncomeMoney(BigDecimal incomeMoney) {
         this.incomeMoney = incomeMoney;
     }
 

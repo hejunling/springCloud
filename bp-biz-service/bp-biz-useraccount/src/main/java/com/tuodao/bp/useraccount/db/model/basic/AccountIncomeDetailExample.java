@@ -1,6 +1,7 @@
 package com.tuodao.bp.useraccount.db.model.basic;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -118,52 +119,52 @@ public class AccountIncomeDetailExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andIdEqualTo(Long value) {
+        public Criteria andIdEqualTo(Integer value) {
             addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotEqualTo(Long value) {
+        public Criteria andIdNotEqualTo(Integer value) {
             addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThan(Long value) {
+        public Criteria andIdGreaterThan(Integer value) {
             addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
             addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThan(Long value) {
+        public Criteria andIdLessThan(Integer value) {
             addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanOrEqualTo(Long value) {
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
             addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdIn(List<Long> values) {
+        public Criteria andIdIn(List<Integer> values) {
             addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotIn(List<Long> values) {
+        public Criteria andIdNotIn(List<Integer> values) {
             addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdBetween(Long value1, Long value2) {
+        public Criteria andIdBetween(Integer value1, Integer value2) {
             addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotBetween(Long value1, Long value2) {
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
             addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
@@ -235,76 +236,6 @@ public class AccountIncomeDetailExample implements Serializable {
 
         public Criteria andUserIdNotBetween(String value1, String value2) {
             addCriterion("user_id not between", value1, value2, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieIsNull() {
-            addCriterion("moblie is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieIsNotNull() {
-            addCriterion("moblie is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieEqualTo(String value) {
-            addCriterion("moblie =", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotEqualTo(String value) {
-            addCriterion("moblie <>", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieGreaterThan(String value) {
-            addCriterion("moblie >", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieGreaterThanOrEqualTo(String value) {
-            addCriterion("moblie >=", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieLessThan(String value) {
-            addCriterion("moblie <", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieLessThanOrEqualTo(String value) {
-            addCriterion("moblie <=", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieLike(String value) {
-            addCriterion("moblie like", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotLike(String value) {
-            addCriterion("moblie not like", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieIn(List<String> values) {
-            addCriterion("moblie in", values, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotIn(List<String> values) {
-            addCriterion("moblie not in", values, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieBetween(String value1, String value2) {
-            addCriterion("moblie between", value1, value2, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotBetween(String value1, String value2) {
-            addCriterion("moblie not between", value1, value2, "moblie");
             return (Criteria) this;
         }
 
@@ -388,52 +319,52 @@ public class AccountIncomeDetailExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyEqualTo(Double value) {
+        public Criteria andIncomeMoneyEqualTo(BigDecimal value) {
             addCriterion("income_money =", value, "incomeMoney");
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyNotEqualTo(Double value) {
+        public Criteria andIncomeMoneyNotEqualTo(BigDecimal value) {
             addCriterion("income_money <>", value, "incomeMoney");
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyGreaterThan(Double value) {
+        public Criteria andIncomeMoneyGreaterThan(BigDecimal value) {
             addCriterion("income_money >", value, "incomeMoney");
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyGreaterThanOrEqualTo(Double value) {
+        public Criteria andIncomeMoneyGreaterThanOrEqualTo(BigDecimal value) {
             addCriterion("income_money >=", value, "incomeMoney");
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyLessThan(Double value) {
+        public Criteria andIncomeMoneyLessThan(BigDecimal value) {
             addCriterion("income_money <", value, "incomeMoney");
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyLessThanOrEqualTo(Double value) {
+        public Criteria andIncomeMoneyLessThanOrEqualTo(BigDecimal value) {
             addCriterion("income_money <=", value, "incomeMoney");
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyIn(List<Double> values) {
+        public Criteria andIncomeMoneyIn(List<BigDecimal> values) {
             addCriterion("income_money in", values, "incomeMoney");
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyNotIn(List<Double> values) {
+        public Criteria andIncomeMoneyNotIn(List<BigDecimal> values) {
             addCriterion("income_money not in", values, "incomeMoney");
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyBetween(Double value1, Double value2) {
+        public Criteria andIncomeMoneyBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("income_money between", value1, value2, "incomeMoney");
             return (Criteria) this;
         }
 
-        public Criteria andIncomeMoneyNotBetween(Double value1, Double value2) {
+        public Criteria andIncomeMoneyNotBetween(BigDecimal value1, BigDecimal value2) {
             addCriterion("income_money not between", value1, value2, "incomeMoney");
             return (Criteria) this;
         }

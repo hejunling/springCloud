@@ -3,12 +3,10 @@ package com.tuodao.bp.useraccount.db.model.basic;
 import java.io.Serializable;
 import java.util.Date;
 
-public class UesrBussiness implements Serializable {
+public class UserBusiness implements Serializable {
     private Integer id;
 
     private String userId;
-
-    private String moblie;
 
     private Integer bussinessCode;
 
@@ -42,14 +40,6 @@ public class UesrBussiness implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
-    }
-
-    public String getMoblie() {
-        return moblie;
-    }
-
-    public void setMoblie(String moblie) {
-        this.moblie = moblie == null ? null : moblie.trim();
     }
 
     public Integer getBussinessCode() {

@@ -4,7 +4,6 @@
   <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.UserVipInfoHis" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="moblie" property="moblie" jdbcType="VARCHAR" />
     <result column="vip_level" property="vipLevel" jdbcType="INTEGER" />
     <result column="last_month_avg" property="lastMonthAvg" jdbcType="DECIMAL" />
     <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
@@ -75,7 +74,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, moblie, vip_level, last_month_avg, start_time, end_time, remark, gmt_create, 
+    id, user_id, vip_level, last_month_avg, start_time, end_time, remark, gmt_create, 
     gmt_modify, gmt_creator, gmt_modifier, is_del
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserVipInfoHisExample" >
@@ -109,16 +108,16 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserVipInfoHis" >
-    insert into user_vip_info_his (id, user_id, moblie, 
-      vip_level, last_month_avg, start_time, 
-      end_time, remark, gmt_create, 
-      gmt_modify, gmt_creator, gmt_modifier, 
-      is_del)
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{moblie,jdbcType=VARCHAR}, 
-      #{vipLevel,jdbcType=INTEGER}, #{lastMonthAvg,jdbcType=DECIMAL}, #{startTime,jdbcType=TIMESTAMP}, 
-      #{endTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
-      #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, #{gmtModifier,jdbcType=VARCHAR}, 
-      #{isDel,jdbcType=INTEGER})
+    insert into user_vip_info_his (id, user_id, vip_level, 
+      last_month_avg, start_time, end_time, 
+      remark, gmt_create, gmt_modify, 
+      gmt_creator, gmt_modifier, is_del
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{vipLevel,jdbcType=INTEGER}, 
+      #{lastMonthAvg,jdbcType=DECIMAL}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, 
+      #{gmtCreator,jdbcType=VARCHAR}, #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserVipInfoHis" >
     insert into user_vip_info_his
@@ -128,9 +127,6 @@
       </if>
       <if test="userId != null" >
         user_id,
-      </if>
-      <if test="moblie != null" >
-        moblie,
       </if>
       <if test="vipLevel != null" >
         vip_level,
@@ -169,9 +165,6 @@
       </if>
       <if test="userId != null" >
         #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="moblie != null" >
-        #{moblie,jdbcType=VARCHAR},
       </if>
       <if test="vipLevel != null" >
         #{vipLevel,jdbcType=INTEGER},
@@ -220,9 +213,6 @@
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
-      <if test="record.moblie != null" >
-        moblie = #{record.moblie,jdbcType=VARCHAR},
-      </if>
       <if test="record.vipLevel != null" >
         vip_level = #{record.vipLevel,jdbcType=INTEGER},
       </if>
@@ -262,7 +252,6 @@
     update user_vip_info_his
     set id = #{record.id,jdbcType=INTEGER},
       user_id = #{record.userId,jdbcType=VARCHAR},
-      moblie = #{record.moblie,jdbcType=VARCHAR},
       vip_level = #{record.vipLevel,jdbcType=INTEGER},
       last_month_avg = #{record.lastMonthAvg,jdbcType=DECIMAL},
       start_time = #{record.startTime,jdbcType=TIMESTAMP},
@@ -282,9 +271,6 @@
     <set >
       <if test="userId != null" >
         user_id = #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="moblie != null" >
-        moblie = #{moblie,jdbcType=VARCHAR},
       </if>
       <if test="vipLevel != null" >
         vip_level = #{vipLevel,jdbcType=INTEGER},
@@ -322,7 +308,6 @@
   <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserVipInfoHis" >
     update user_vip_info_his
     set user_id = #{userId,jdbcType=VARCHAR},
-      moblie = #{moblie,jdbcType=VARCHAR},
       vip_level = #{vipLevel,jdbcType=INTEGER},
       last_month_avg = #{lastMonthAvg,jdbcType=DECIMAL},
       start_time = #{startTime,jdbcType=TIMESTAMP},

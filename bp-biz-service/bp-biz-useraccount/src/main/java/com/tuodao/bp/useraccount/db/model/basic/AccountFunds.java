@@ -7,8 +7,6 @@ import java.util.Date;
 public class AccountFunds implements Serializable {
     private String userId;
 
-    private String moblie;
-
     private BigDecimal totalFund;
 
     private BigDecimal financeFund;
@@ -33,14 +31,6 @@ public class AccountFunds implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
-    }
-
-    public String getMoblie() {
-        return moblie;
-    }
-
-    public void setMoblie(String moblie) {
-        this.moblie = moblie == null ? null : moblie.trim();
     }
 
     public BigDecimal getTotalFund() {

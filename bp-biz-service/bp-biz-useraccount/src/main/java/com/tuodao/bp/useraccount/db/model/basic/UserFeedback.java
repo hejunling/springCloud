@@ -4,13 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class UserFeedback implements Serializable {
-    private Long id;
+    private Integer id;
 
     private String userId;
 
-    private String userMobile;
-
-    private String source;
+    private Integer source;
 
     private String version;
 
@@ -32,11 +30,11 @@ public class UserFeedback implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -48,20 +46,12 @@ public class UserFeedback implements Serializable {
         this.userId = userId == null ? null : userId.trim();
     }
 
-    public String getUserMobile() {
-        return userMobile;
-    }
-
-    public void setUserMobile(String userMobile) {
-        this.userMobile = userMobile == null ? null : userMobile.trim();
-    }
-
-    public String getSource() {
+    public Integer getSource() {
         return source;
     }
 
-    public void setSource(String source) {
-        this.source = source == null ? null : source.trim();
+    public void setSource(Integer source) {
+        this.source = source;
     }
 
     public String getVersion() {

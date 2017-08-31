@@ -3,7 +3,7 @@ package com.tuodao.bp.useraccount.db.model.basic;
 import java.io.Serializable;
 import java.util.Date;
 
-public class BussinesInfo implements Serializable {
+public class BusinessInfo implements Serializable {
     private Integer id;
 
     private String code;

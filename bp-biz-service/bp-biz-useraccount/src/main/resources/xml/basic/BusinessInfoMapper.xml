@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.tuodao.bp.useraccount.db.mapper.basic.UserLableMapper" >
-  <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.UserLable" >
+<mapper namespace="com.tuodao.bp.useraccount.db.mapper.basic.BusinessInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.BusinessInfo" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="moblie" property="moblie" jdbcType="VARCHAR" />
-    <result column="user_lable" property="userLable" jdbcType="VARCHAR" />
-    <result column="lable_type" property="lableType" jdbcType="INTEGER" />
-    <result column="renark" property="renark" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
     <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
     <result column="gmt_modify" property="gmtModify" jdbcType="TIMESTAMP" />
     <result column="gmt_creator" property="gmtCreator" jdbcType="VARCHAR" />
@@ -73,16 +71,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, moblie, user_lable, lable_type, renark, gmt_create, gmt_modify, gmt_creator, 
-    gmt_modifier, is_del
+    id, code, name, remark, gmt_create, gmt_modify, gmt_creator, gmt_modifier, is_del
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLableExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.BusinessInfoExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from user_lable
+    from business_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -93,49 +90,43 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from user_lable
+    from business_info
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from user_lable
+    delete from business_info
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLableExample" >
-    delete from user_lable
+  <delete id="deleteByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.BusinessInfoExample" >
+    delete from business_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLable" >
-    insert into user_lable (id, user_id, moblie, 
-      user_lable, lable_type, renark, 
-      gmt_create, gmt_modify, gmt_creator, 
-      gmt_modifier, is_del)
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{moblie,jdbcType=VARCHAR}, 
-      #{userLable,jdbcType=VARCHAR}, #{lableType,jdbcType=INTEGER}, #{renark,jdbcType=VARCHAR}, 
-      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, 
-      #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER})
+  <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.BusinessInfo" >
+    insert into business_info (id, code, name, 
+      remark, gmt_create, gmt_modify, 
+      gmt_creator, gmt_modifier, is_del
+      )
+    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, 
+      #{gmtCreator,jdbcType=VARCHAR}, #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLable" >
-    insert into user_lable
+  <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.BusinessInfo" >
+    insert into business_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
       </if>
-      <if test="userId != null" >
-        user_id,
+      <if test="code != null" >
+        code,
       </if>
-      <if test="moblie != null" >
-        moblie,
+      <if test="name != null" >
+        name,
       </if>
-      <if test="userLable != null" >
-        user_lable,
-      </if>
-      <if test="lableType != null" >
-        lable_type,
-      </if>
-      <if test="renark != null" >
-        renark,
+      <if test="remark != null" >
+        remark,
       </if>
       <if test="gmtCreate != null" >
         gmt_create,
@@ -157,20 +148,14 @@
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="userId != null" >
-        #{userId,jdbcType=VARCHAR},
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
       </if>
-      <if test="moblie != null" >
-        #{moblie,jdbcType=VARCHAR},
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
       </if>
-      <if test="userLable != null" >
-        #{userLable,jdbcType=VARCHAR},
-      </if>
-      <if test="lableType != null" >
-        #{lableType,jdbcType=INTEGER},
-      </if>
-      <if test="renark != null" >
-        #{renark,jdbcType=VARCHAR},
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null" >
         #{gmtCreate,jdbcType=TIMESTAMP},
@@ -189,32 +174,26 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLableExample" resultType="java.lang.Integer" >
-    select count(*) from user_lable
+  <select id="countByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.BusinessInfoExample" resultType="java.lang.Integer" >
+    select count(*) from business_info
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update user_lable
+    update business_info
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.userId != null" >
-        user_id = #{record.userId,jdbcType=VARCHAR},
+      <if test="record.code != null" >
+        code = #{record.code,jdbcType=VARCHAR},
       </if>
-      <if test="record.moblie != null" >
-        moblie = #{record.moblie,jdbcType=VARCHAR},
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.userLable != null" >
-        user_lable = #{record.userLable,jdbcType=VARCHAR},
-      </if>
-      <if test="record.lableType != null" >
-        lable_type = #{record.lableType,jdbcType=INTEGER},
-      </if>
-      <if test="record.renark != null" >
-        renark = #{record.renark,jdbcType=VARCHAR},
+      <if test="record.remark != null" >
+        remark = #{record.remark,jdbcType=VARCHAR},
       </if>
       <if test="record.gmtCreate != null" >
         gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
@@ -237,13 +216,11 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update user_lable
+    update business_info
     set id = #{record.id,jdbcType=INTEGER},
-      user_id = #{record.userId,jdbcType=VARCHAR},
-      moblie = #{record.moblie,jdbcType=VARCHAR},
-      user_lable = #{record.userLable,jdbcType=VARCHAR},
-      lable_type = #{record.lableType,jdbcType=INTEGER},
-      renark = #{record.renark,jdbcType=VARCHAR},
+      code = #{record.code,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
       gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
       gmt_modify = #{record.gmtModify,jdbcType=TIMESTAMP},
       gmt_creator = #{record.gmtCreator,jdbcType=VARCHAR},
@@ -253,23 +230,17 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLable" >
-    update user_lable
+  <update id="updateByPrimaryKeySelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.BusinessInfo" >
+    update business_info
     <set >
-      <if test="userId != null" >
-        user_id = #{userId,jdbcType=VARCHAR},
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
       </if>
-      <if test="moblie != null" >
-        moblie = #{moblie,jdbcType=VARCHAR},
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="userLable != null" >
-        user_lable = #{userLable,jdbcType=VARCHAR},
-      </if>
-      <if test="lableType != null" >
-        lable_type = #{lableType,jdbcType=INTEGER},
-      </if>
-      <if test="renark != null" >
-        renark = #{renark,jdbcType=VARCHAR},
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null" >
         gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
@@ -289,13 +260,11 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLable" >
-    update user_lable
-    set user_id = #{userId,jdbcType=VARCHAR},
-      moblie = #{moblie,jdbcType=VARCHAR},
-      user_lable = #{userLable,jdbcType=VARCHAR},
-      lable_type = #{lableType,jdbcType=INTEGER},
-      renark = #{renark,jdbcType=VARCHAR},
+  <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.BusinessInfo" >
+    update business_info
+    set code = #{code,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
       gmt_creator = #{gmtCreator,jdbcType=VARCHAR},

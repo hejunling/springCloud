@@ -10,7 +10,7 @@ public interface AccountIncomeDetailMapper {
 
     int deleteByExample(AccountIncomeDetailExample example);
 
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(AccountIncomeDetail record);
 
@@ -18,7 +18,7 @@ public interface AccountIncomeDetailMapper {
 
     List<AccountIncomeDetail> selectByExample(AccountIncomeDetailExample example);
 
-    AccountIncomeDetail selectByPrimaryKey(Long id);
+    AccountIncomeDetail selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") AccountIncomeDetail record, @Param("example") AccountIncomeDetailExample example);
 
