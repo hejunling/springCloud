@@ -15,4 +15,5 @@ public class ResultConstant {
 	public static final int PARAMETER_CHECK_FAILED = 100002;
 	/** 参数异常MSG */
 	public static final String PARAMETER_EXCEPTION_MSG = "参数异常";
+
 }
