@@ -109,6 +109,66 @@ public class UserVipInfoExample implements Serializable {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
+            return (Criteria) this;
+        }
+
         public Criteria andUserIdIsNull() {
             addCriterion("user_id is null");
             return (Criteria) this;
@@ -176,76 +236,6 @@ public class UserVipInfoExample implements Serializable {
 
         public Criteria andUserIdNotBetween(String value1, String value2) {
             addCriterion("user_id not between", value1, value2, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieIsNull() {
-            addCriterion("moblie is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieIsNotNull() {
-            addCriterion("moblie is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieEqualTo(String value) {
-            addCriterion("moblie =", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotEqualTo(String value) {
-            addCriterion("moblie <>", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieGreaterThan(String value) {
-            addCriterion("moblie >", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieGreaterThanOrEqualTo(String value) {
-            addCriterion("moblie >=", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieLessThan(String value) {
-            addCriterion("moblie <", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieLessThanOrEqualTo(String value) {
-            addCriterion("moblie <=", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieLike(String value) {
-            addCriterion("moblie like", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotLike(String value) {
-            addCriterion("moblie not like", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieIn(List<String> values) {
-            addCriterion("moblie in", values, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotIn(List<String> values) {
-            addCriterion("moblie not in", values, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieBetween(String value1, String value2) {
-            addCriterion("moblie between", value1, value2, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotBetween(String value1, String value2) {
-            addCriterion("moblie not between", value1, value2, "moblie");
             return (Criteria) this;
         }
 

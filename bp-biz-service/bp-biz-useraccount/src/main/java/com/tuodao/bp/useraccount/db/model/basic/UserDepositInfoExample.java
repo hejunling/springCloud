@@ -108,6 +108,66 @@ public class UserDepositInfoExample implements Serializable {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
+        public Criteria andIdIsNull() {
+            addCriterion("id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdIsNotNull() {
+            addCriterion("id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdEqualTo(Integer value) {
+            addCriterion("id =", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotEqualTo(Integer value) {
+            addCriterion("id <>", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThan(Integer value) {
+            addCriterion("id >", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id >=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThan(Integer value) {
+            addCriterion("id <", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
+            addCriterion("id <=", value, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdIn(List<Integer> values) {
+            addCriterion("id in", values, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotIn(List<Integer> values) {
+            addCriterion("id not in", values, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdBetween(Integer value1, Integer value2) {
+            addCriterion("id between", value1, value2, "id");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("id not between", value1, value2, "id");
+            return (Criteria) this;
+        }
+
         public Criteria andUserIdIsNull() {
             addCriterion("user_id is null");
             return (Criteria) this;
@@ -175,76 +235,6 @@ public class UserDepositInfoExample implements Serializable {
 
         public Criteria andUserIdNotBetween(String value1, String value2) {
             addCriterion("user_id not between", value1, value2, "userId");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieIsNull() {
-            addCriterion("moblie is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieIsNotNull() {
-            addCriterion("moblie is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieEqualTo(String value) {
-            addCriterion("moblie =", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotEqualTo(String value) {
-            addCriterion("moblie <>", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieGreaterThan(String value) {
-            addCriterion("moblie >", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieGreaterThanOrEqualTo(String value) {
-            addCriterion("moblie >=", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieLessThan(String value) {
-            addCriterion("moblie <", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieLessThanOrEqualTo(String value) {
-            addCriterion("moblie <=", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieLike(String value) {
-            addCriterion("moblie like", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotLike(String value) {
-            addCriterion("moblie not like", value, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieIn(List<String> values) {
-            addCriterion("moblie in", values, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotIn(List<String> values) {
-            addCriterion("moblie not in", values, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieBetween(String value1, String value2) {
-            addCriterion("moblie between", value1, value2, "moblie");
-            return (Criteria) this;
-        }
-
-        public Criteria andMoblieNotBetween(String value1, String value2) {
-            addCriterion("moblie not between", value1, value2, "moblie");
             return (Criteria) this;
         }
 
@@ -718,76 +708,6 @@ public class UserDepositInfoExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andGmtCreatorIsNull() {
-            addCriterion("gmt_creator is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorIsNotNull() {
-            addCriterion("gmt_creator is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorEqualTo(String value) {
-            addCriterion("gmt_creator =", value, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorNotEqualTo(String value) {
-            addCriterion("gmt_creator <>", value, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorGreaterThan(String value) {
-            addCriterion("gmt_creator >", value, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorGreaterThanOrEqualTo(String value) {
-            addCriterion("gmt_creator >=", value, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorLessThan(String value) {
-            addCriterion("gmt_creator <", value, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorLessThanOrEqualTo(String value) {
-            addCriterion("gmt_creator <=", value, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorLike(String value) {
-            addCriterion("gmt_creator like", value, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorNotLike(String value) {
-            addCriterion("gmt_creator not like", value, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorIn(List<String> values) {
-            addCriterion("gmt_creator in", values, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorNotIn(List<String> values) {
-            addCriterion("gmt_creator not in", values, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorBetween(String value1, String value2) {
-            addCriterion("gmt_creator between", value1, value2, "gmtCreator");
-            return (Criteria) this;
-        }
-
-        public Criteria andGmtCreatorNotBetween(String value1, String value2) {
-            addCriterion("gmt_creator not between", value1, value2, "gmtCreator");
-            return (Criteria) this;
-        }
-
         public Criteria andGmtModifierIsNull() {
             addCriterion("gmt_modifier is null");
             return (Criteria) this;
@@ -855,6 +775,76 @@ public class UserDepositInfoExample implements Serializable {
 
         public Criteria andGmtModifierNotBetween(String value1, String value2) {
             addCriterion("gmt_modifier not between", value1, value2, "gmtModifier");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorIsNull() {
+            addCriterion("gmt_creator is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorIsNotNull() {
+            addCriterion("gmt_creator is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorEqualTo(String value) {
+            addCriterion("gmt_creator =", value, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorNotEqualTo(String value) {
+            addCriterion("gmt_creator <>", value, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorGreaterThan(String value) {
+            addCriterion("gmt_creator >", value, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorGreaterThanOrEqualTo(String value) {
+            addCriterion("gmt_creator >=", value, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorLessThan(String value) {
+            addCriterion("gmt_creator <", value, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorLessThanOrEqualTo(String value) {
+            addCriterion("gmt_creator <=", value, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorLike(String value) {
+            addCriterion("gmt_creator like", value, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorNotLike(String value) {
+            addCriterion("gmt_creator not like", value, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorIn(List<String> values) {
+            addCriterion("gmt_creator in", values, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorNotIn(List<String> values) {
+            addCriterion("gmt_creator not in", values, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorBetween(String value1, String value2) {
+            addCriterion("gmt_creator between", value1, value2, "gmtCreator");
+            return (Criteria) this;
+        }
+
+        public Criteria andGmtCreatorNotBetween(String value1, String value2) {
+            addCriterion("gmt_creator not between", value1, value2, "gmtCreator");
             return (Criteria) this;
         }
 

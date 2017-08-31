@@ -9,8 +9,6 @@ public class UserVipInfoHis implements Serializable {
 
     private String userId;
 
-    private String moblie;
-
     private Integer vipLevel;
 
     private BigDecimal lastMonthAvg;
@@ -47,14 +45,6 @@ public class UserVipInfoHis implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
-    }
-
-    public String getMoblie() {
-        return moblie;
-    }
-
-    public void setMoblie(String moblie) {
-        this.moblie = moblie == null ? null : moblie.trim();
     }
 
     public Integer getVipLevel() {

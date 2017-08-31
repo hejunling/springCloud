@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.tuodao.bp.useraccount.db.mapper.basic.ConfigDictonaryMapper" >
-  <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.ConfigDictonary" >
+<mapper namespace="com.tuodao.bp.useraccount.db.mapper.basic.UserLabelMapper" >
+  <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.UserLabel" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="dic_type" property="dicType" jdbcType="VARCHAR" />
-    <result column="dic_code" property="dicCode" jdbcType="VARCHAR" />
-    <result column="dic_name" property="dicName" jdbcType="VARCHAR" />
-    <result column="dic_description" property="dicDescription" jdbcType="VARCHAR" />
-    <result column="dic_status" property="dicStatus" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="user_label" property="userLabel" jdbcType="VARCHAR" />
+    <result column="label_type" property="labelType" jdbcType="INTEGER" />
+    <result column="renark" property="renark" jdbcType="VARCHAR" />
     <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
     <result column="gmt_modify" property="gmtModify" jdbcType="TIMESTAMP" />
     <result column="gmt_creator" property="gmtCreator" jdbcType="VARCHAR" />
@@ -73,16 +72,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, dic_type, dic_code, dic_name, dic_description, dic_status, gmt_create, gmt_modify, 
-    gmt_creator, gmt_modifier, is_del
+    id, user_id, user_label, label_type, renark, gmt_create, gmt_modify, gmt_creator, 
+    gmt_modifier, is_del
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.ConfigDictonaryExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLabelExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from config_dictonary
+    from user_label
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -93,49 +92,46 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from config_dictonary
+    from user_label
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from config_dictonary
+    delete from user_label
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.ConfigDictonaryExample" >
-    delete from config_dictonary
+  <delete id="deleteByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLabelExample" >
+    delete from user_label
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.ConfigDictonary" >
-    insert into config_dictonary (id, dic_type, dic_code, 
-      dic_name, dic_description, dic_status, 
-      gmt_create, gmt_modify, gmt_creator, 
-      gmt_modifier, is_del)
-    values (#{id,jdbcType=INTEGER}, #{dicType,jdbcType=VARCHAR}, #{dicCode,jdbcType=VARCHAR}, 
-      #{dicName,jdbcType=VARCHAR}, #{dicDescription,jdbcType=VARCHAR}, #{dicStatus,jdbcType=INTEGER}, 
-      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, 
-      #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER})
+  <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLabel" >
+    insert into user_label (id, user_id, user_label, 
+      label_type, renark, gmt_create, 
+      gmt_modify, gmt_creator, gmt_modifier, 
+      is_del)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{userLabel,jdbcType=VARCHAR}, 
+      #{labelType,jdbcType=INTEGER}, #{renark,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, #{gmtModifier,jdbcType=VARCHAR}, 
+      #{isDel,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.ConfigDictonary" >
-    insert into config_dictonary
+  <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLabel" >
+    insert into user_label
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
       </if>
-      <if test="dicType != null" >
-        dic_type,
+      <if test="userId != null" >
+        user_id,
       </if>
-      <if test="dicCode != null" >
-        dic_code,
+      <if test="userLabel != null" >
+        user_label,
       </if>
-      <if test="dicName != null" >
-        dic_name,
+      <if test="labelType != null" >
+        label_type,
       </if>
-      <if test="dicDescription != null" >
-        dic_description,
-      </if>
-      <if test="dicStatus != null" >
-        dic_status,
+      <if test="renark != null" >
+        renark,
       </if>
       <if test="gmtCreate != null" >
         gmt_create,
@@ -157,20 +153,17 @@
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="dicType != null" >
-        #{dicType,jdbcType=VARCHAR},
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
       </if>
-      <if test="dicCode != null" >
-        #{dicCode,jdbcType=VARCHAR},
+      <if test="userLabel != null" >
+        #{userLabel,jdbcType=VARCHAR},
       </if>
-      <if test="dicName != null" >
-        #{dicName,jdbcType=VARCHAR},
+      <if test="labelType != null" >
+        #{labelType,jdbcType=INTEGER},
       </if>
-      <if test="dicDescription != null" >
-        #{dicDescription,jdbcType=VARCHAR},
-      </if>
-      <if test="dicStatus != null" >
-        #{dicStatus,jdbcType=INTEGER},
+      <if test="renark != null" >
+        #{renark,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null" >
         #{gmtCreate,jdbcType=TIMESTAMP},
@@ -189,32 +182,29 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.ConfigDictonaryExample" resultType="java.lang.Integer" >
-    select count(*) from config_dictonary
+  <select id="countByExample" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLabelExample" resultType="java.lang.Integer" >
+    select count(*) from user_label
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update config_dictonary
+    update user_label
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.dicType != null" >
-        dic_type = #{record.dicType,jdbcType=VARCHAR},
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
-      <if test="record.dicCode != null" >
-        dic_code = #{record.dicCode,jdbcType=VARCHAR},
+      <if test="record.userLabel != null" >
+        user_label = #{record.userLabel,jdbcType=VARCHAR},
       </if>
-      <if test="record.dicName != null" >
-        dic_name = #{record.dicName,jdbcType=VARCHAR},
+      <if test="record.labelType != null" >
+        label_type = #{record.labelType,jdbcType=INTEGER},
       </if>
-      <if test="record.dicDescription != null" >
-        dic_description = #{record.dicDescription,jdbcType=VARCHAR},
-      </if>
-      <if test="record.dicStatus != null" >
-        dic_status = #{record.dicStatus,jdbcType=INTEGER},
+      <if test="record.renark != null" >
+        renark = #{record.renark,jdbcType=VARCHAR},
       </if>
       <if test="record.gmtCreate != null" >
         gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
@@ -237,13 +227,12 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update config_dictonary
+    update user_label
     set id = #{record.id,jdbcType=INTEGER},
-      dic_type = #{record.dicType,jdbcType=VARCHAR},
-      dic_code = #{record.dicCode,jdbcType=VARCHAR},
-      dic_name = #{record.dicName,jdbcType=VARCHAR},
-      dic_description = #{record.dicDescription,jdbcType=VARCHAR},
-      dic_status = #{record.dicStatus,jdbcType=INTEGER},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      user_label = #{record.userLabel,jdbcType=VARCHAR},
+      label_type = #{record.labelType,jdbcType=INTEGER},
+      renark = #{record.renark,jdbcType=VARCHAR},
       gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
       gmt_modify = #{record.gmtModify,jdbcType=TIMESTAMP},
       gmt_creator = #{record.gmtCreator,jdbcType=VARCHAR},
@@ -253,23 +242,20 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.ConfigDictonary" >
-    update config_dictonary
+  <update id="updateByPrimaryKeySelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLabel" >
+    update user_label
     <set >
-      <if test="dicType != null" >
-        dic_type = #{dicType,jdbcType=VARCHAR},
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
       </if>
-      <if test="dicCode != null" >
-        dic_code = #{dicCode,jdbcType=VARCHAR},
+      <if test="userLabel != null" >
+        user_label = #{userLabel,jdbcType=VARCHAR},
       </if>
-      <if test="dicName != null" >
-        dic_name = #{dicName,jdbcType=VARCHAR},
+      <if test="labelType != null" >
+        label_type = #{labelType,jdbcType=INTEGER},
       </if>
-      <if test="dicDescription != null" >
-        dic_description = #{dicDescription,jdbcType=VARCHAR},
-      </if>
-      <if test="dicStatus != null" >
-        dic_status = #{dicStatus,jdbcType=INTEGER},
+      <if test="renark != null" >
+        renark = #{renark,jdbcType=VARCHAR},
       </if>
       <if test="gmtCreate != null" >
         gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
@@ -289,13 +275,12 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.ConfigDictonary" >
-    update config_dictonary
-    set dic_type = #{dicType,jdbcType=VARCHAR},
-      dic_code = #{dicCode,jdbcType=VARCHAR},
-      dic_name = #{dicName,jdbcType=VARCHAR},
-      dic_description = #{dicDescription,jdbcType=VARCHAR},
-      dic_status = #{dicStatus,jdbcType=INTEGER},
+  <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLabel" >
+    update user_label
+    set user_id = #{userId,jdbcType=VARCHAR},
+      user_label = #{userLabel,jdbcType=VARCHAR},
+      label_type = #{labelType,jdbcType=INTEGER},
+      renark = #{renark,jdbcType=VARCHAR},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
       gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
       gmt_creator = #{gmtCreator,jdbcType=VARCHAR},

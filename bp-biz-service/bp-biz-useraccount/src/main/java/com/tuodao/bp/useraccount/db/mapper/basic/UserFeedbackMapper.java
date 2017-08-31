@@ -10,7 +10,7 @@ public interface UserFeedbackMapper {
 
     int deleteByExample(UserFeedbackExample example);
 
-    int deleteByPrimaryKey(Long id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(UserFeedback record);
 
@@ -18,7 +18,7 @@ public interface UserFeedbackMapper {
 
     List<UserFeedback> selectByExample(UserFeedbackExample example);
 
-    UserFeedback selectByPrimaryKey(Long id);
+    UserFeedback selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") UserFeedback record, @Param("example") UserFeedbackExample example);
 

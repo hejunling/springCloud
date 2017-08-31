@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class UesrBussinessExample implements Serializable {
+public class UserLabelExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -14,7 +14,7 @@ public class UesrBussinessExample implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public UesrBussinessExample() {
+    public UserLabelExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -238,263 +238,203 @@ public class UesrBussinessExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andMoblieIsNull() {
-            addCriterion("moblie is null");
+        public Criteria andUserLabelIsNull() {
+            addCriterion("user_label is null");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieIsNotNull() {
-            addCriterion("moblie is not null");
+        public Criteria andUserLabelIsNotNull() {
+            addCriterion("user_label is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieEqualTo(String value) {
-            addCriterion("moblie =", value, "moblie");
+        public Criteria andUserLabelEqualTo(String value) {
+            addCriterion("user_label =", value, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieNotEqualTo(String value) {
-            addCriterion("moblie <>", value, "moblie");
+        public Criteria andUserLabelNotEqualTo(String value) {
+            addCriterion("user_label <>", value, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieGreaterThan(String value) {
-            addCriterion("moblie >", value, "moblie");
+        public Criteria andUserLabelGreaterThan(String value) {
+            addCriterion("user_label >", value, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieGreaterThanOrEqualTo(String value) {
-            addCriterion("moblie >=", value, "moblie");
+        public Criteria andUserLabelGreaterThanOrEqualTo(String value) {
+            addCriterion("user_label >=", value, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieLessThan(String value) {
-            addCriterion("moblie <", value, "moblie");
+        public Criteria andUserLabelLessThan(String value) {
+            addCriterion("user_label <", value, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieLessThanOrEqualTo(String value) {
-            addCriterion("moblie <=", value, "moblie");
+        public Criteria andUserLabelLessThanOrEqualTo(String value) {
+            addCriterion("user_label <=", value, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieLike(String value) {
-            addCriterion("moblie like", value, "moblie");
+        public Criteria andUserLabelLike(String value) {
+            addCriterion("user_label like", value, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieNotLike(String value) {
-            addCriterion("moblie not like", value, "moblie");
+        public Criteria andUserLabelNotLike(String value) {
+            addCriterion("user_label not like", value, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieIn(List<String> values) {
-            addCriterion("moblie in", values, "moblie");
+        public Criteria andUserLabelIn(List<String> values) {
+            addCriterion("user_label in", values, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieNotIn(List<String> values) {
-            addCriterion("moblie not in", values, "moblie");
+        public Criteria andUserLabelNotIn(List<String> values) {
+            addCriterion("user_label not in", values, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieBetween(String value1, String value2) {
-            addCriterion("moblie between", value1, value2, "moblie");
+        public Criteria andUserLabelBetween(String value1, String value2) {
+            addCriterion("user_label between", value1, value2, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andMoblieNotBetween(String value1, String value2) {
-            addCriterion("moblie not between", value1, value2, "moblie");
+        public Criteria andUserLabelNotBetween(String value1, String value2) {
+            addCriterion("user_label not between", value1, value2, "userLabel");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeIsNull() {
-            addCriterion("bussiness_code is null");
+        public Criteria andLabelTypeIsNull() {
+            addCriterion("label_type is null");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeIsNotNull() {
-            addCriterion("bussiness_code is not null");
+        public Criteria andLabelTypeIsNotNull() {
+            addCriterion("label_type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeEqualTo(Integer value) {
-            addCriterion("bussiness_code =", value, "bussinessCode");
+        public Criteria andLabelTypeEqualTo(Integer value) {
+            addCriterion("label_type =", value, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeNotEqualTo(Integer value) {
-            addCriterion("bussiness_code <>", value, "bussinessCode");
+        public Criteria andLabelTypeNotEqualTo(Integer value) {
+            addCriterion("label_type <>", value, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeGreaterThan(Integer value) {
-            addCriterion("bussiness_code >", value, "bussinessCode");
+        public Criteria andLabelTypeGreaterThan(Integer value) {
+            addCriterion("label_type >", value, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("bussiness_code >=", value, "bussinessCode");
+        public Criteria andLabelTypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("label_type >=", value, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeLessThan(Integer value) {
-            addCriterion("bussiness_code <", value, "bussinessCode");
+        public Criteria andLabelTypeLessThan(Integer value) {
+            addCriterion("label_type <", value, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeLessThanOrEqualTo(Integer value) {
-            addCriterion("bussiness_code <=", value, "bussinessCode");
+        public Criteria andLabelTypeLessThanOrEqualTo(Integer value) {
+            addCriterion("label_type <=", value, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeIn(List<Integer> values) {
-            addCriterion("bussiness_code in", values, "bussinessCode");
+        public Criteria andLabelTypeIn(List<Integer> values) {
+            addCriterion("label_type in", values, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeNotIn(List<Integer> values) {
-            addCriterion("bussiness_code not in", values, "bussinessCode");
+        public Criteria andLabelTypeNotIn(List<Integer> values) {
+            addCriterion("label_type not in", values, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeBetween(Integer value1, Integer value2) {
-            addCriterion("bussiness_code between", value1, value2, "bussinessCode");
+        public Criteria andLabelTypeBetween(Integer value1, Integer value2) {
+            addCriterion("label_type between", value1, value2, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andBussinessCodeNotBetween(Integer value1, Integer value2) {
-            addCriterion("bussiness_code not between", value1, value2, "bussinessCode");
+        public Criteria andLabelTypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("label_type not between", value1, value2, "labelType");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeIsNull() {
-            addCriterion("open_type is null");
+        public Criteria andRenarkIsNull() {
+            addCriterion("renark is null");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeIsNotNull() {
-            addCriterion("open_type is not null");
+        public Criteria andRenarkIsNotNull() {
+            addCriterion("renark is not null");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeEqualTo(Integer value) {
-            addCriterion("open_type =", value, "openType");
+        public Criteria andRenarkEqualTo(String value) {
+            addCriterion("renark =", value, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeNotEqualTo(Integer value) {
-            addCriterion("open_type <>", value, "openType");
+        public Criteria andRenarkNotEqualTo(String value) {
+            addCriterion("renark <>", value, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeGreaterThan(Integer value) {
-            addCriterion("open_type >", value, "openType");
+        public Criteria andRenarkGreaterThan(String value) {
+            addCriterion("renark >", value, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("open_type >=", value, "openType");
+        public Criteria andRenarkGreaterThanOrEqualTo(String value) {
+            addCriterion("renark >=", value, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeLessThan(Integer value) {
-            addCriterion("open_type <", value, "openType");
+        public Criteria andRenarkLessThan(String value) {
+            addCriterion("renark <", value, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeLessThanOrEqualTo(Integer value) {
-            addCriterion("open_type <=", value, "openType");
+        public Criteria andRenarkLessThanOrEqualTo(String value) {
+            addCriterion("renark <=", value, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeIn(List<Integer> values) {
-            addCriterion("open_type in", values, "openType");
+        public Criteria andRenarkLike(String value) {
+            addCriterion("renark like", value, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeNotIn(List<Integer> values) {
-            addCriterion("open_type not in", values, "openType");
+        public Criteria andRenarkNotLike(String value) {
+            addCriterion("renark not like", value, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeBetween(Integer value1, Integer value2) {
-            addCriterion("open_type between", value1, value2, "openType");
+        public Criteria andRenarkIn(List<String> values) {
+            addCriterion("renark in", values, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andOpenTypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("open_type not between", value1, value2, "openType");
+        public Criteria andRenarkNotIn(List<String> values) {
+            addCriterion("renark not in", values, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andRemarkIsNull() {
-            addCriterion("remark is null");
+        public Criteria andRenarkBetween(String value1, String value2) {
+            addCriterion("renark between", value1, value2, "renark");
             return (Criteria) this;
         }
 
-        public Criteria andRemarkIsNotNull() {
-            addCriterion("remark is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkEqualTo(String value) {
-            addCriterion("remark =", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkNotEqualTo(String value) {
-            addCriterion("remark <>", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkGreaterThan(String value) {
-            addCriterion("remark >", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkGreaterThanOrEqualTo(String value) {
-            addCriterion("remark >=", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkLessThan(String value) {
-            addCriterion("remark <", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkLessThanOrEqualTo(String value) {
-            addCriterion("remark <=", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkLike(String value) {
-            addCriterion("remark like", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkNotLike(String value) {
-            addCriterion("remark not like", value, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkIn(List<String> values) {
-            addCriterion("remark in", values, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkNotIn(List<String> values) {
-            addCriterion("remark not in", values, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkBetween(String value1, String value2) {
-            addCriterion("remark between", value1, value2, "remark");
-            return (Criteria) this;
-        }
-
-        public Criteria andRemarkNotBetween(String value1, String value2) {
-            addCriterion("remark not between", value1, value2, "remark");
+        public Criteria andRenarkNotBetween(String value1, String value2) {
+            addCriterion("renark not between", value1, value2, "renark");
             return (Criteria) this;
         }
 

@@ -4,7 +4,6 @@
   <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.UserLoginLog" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="moblie" property="moblie" jdbcType="VARCHAR" />
     <result column="login_time" property="loginTime" jdbcType="TIMESTAMP" />
     <result column="login_ip" property="loginIp" jdbcType="VARCHAR" />
     <result column="login_source" property="loginSource" jdbcType="INTEGER" />
@@ -69,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, user_id, moblie, login_time, login_ip, login_source, login_version
+    id, user_id, login_time, login_ip, login_source, login_version
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLoginLogExample" >
     select
@@ -102,12 +101,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLoginLog" >
-    insert into user_login_log (id, user_id, moblie, 
-      login_time, login_ip, login_source, 
-      login_version)
-    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{moblie,jdbcType=VARCHAR}, 
-      #{loginTime,jdbcType=TIMESTAMP}, #{loginIp,jdbcType=VARCHAR}, #{loginSource,jdbcType=INTEGER}, 
-      #{loginVersion,jdbcType=VARCHAR})
+    insert into user_login_log (id, user_id, login_time, 
+      login_ip, login_source, login_version
+      )
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR}, #{loginTime,jdbcType=TIMESTAMP}, 
+      #{loginIp,jdbcType=VARCHAR}, #{loginSource,jdbcType=INTEGER}, #{loginVersion,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLoginLog" >
     insert into user_login_log
@@ -117,9 +116,6 @@
       </if>
       <if test="userId != null" >
         user_id,
-      </if>
-      <if test="moblie != null" >
-        moblie,
       </if>
       <if test="loginTime != null" >
         login_time,
@@ -140,9 +136,6 @@
       </if>
       <if test="userId != null" >
         #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="moblie != null" >
-        #{moblie,jdbcType=VARCHAR},
       </if>
       <if test="loginTime != null" >
         #{loginTime,jdbcType=TIMESTAMP},
@@ -173,9 +166,6 @@
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
-      <if test="record.moblie != null" >
-        moblie = #{record.moblie,jdbcType=VARCHAR},
-      </if>
       <if test="record.loginTime != null" >
         login_time = #{record.loginTime,jdbcType=TIMESTAMP},
       </if>
@@ -197,7 +187,6 @@
     update user_login_log
     set id = #{record.id,jdbcType=BIGINT},
       user_id = #{record.userId,jdbcType=VARCHAR},
-      moblie = #{record.moblie,jdbcType=VARCHAR},
       login_time = #{record.loginTime,jdbcType=TIMESTAMP},
       login_ip = #{record.loginIp,jdbcType=VARCHAR},
       login_source = #{record.loginSource,jdbcType=INTEGER},
@@ -211,9 +200,6 @@
     <set >
       <if test="userId != null" >
         user_id = #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="moblie != null" >
-        moblie = #{moblie,jdbcType=VARCHAR},
       </if>
       <if test="loginTime != null" >
         login_time = #{loginTime,jdbcType=TIMESTAMP},
@@ -233,7 +219,6 @@
   <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserLoginLog" >
     update user_login_log
     set user_id = #{userId,jdbcType=VARCHAR},
-      moblie = #{moblie,jdbcType=VARCHAR},
       login_time = #{loginTime,jdbcType=TIMESTAMP},
       login_ip = #{loginIp,jdbcType=VARCHAR},
       login_source = #{loginSource,jdbcType=INTEGER},

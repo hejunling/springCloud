@@ -3,7 +3,6 @@
 <mapper namespace="com.tuodao.bp.useraccount.db.mapper.basic.AccountFundsMapper" >
   <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.AccountFunds" >
     <id column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="moblie" property="moblie" jdbcType="VARCHAR" />
     <result column="total_fund" property="totalFund" jdbcType="DECIMAL" />
     <result column="finance_fund" property="financeFund" jdbcType="DECIMAL" />
     <result column="remark" property="remark" jdbcType="VARCHAR" />
@@ -72,8 +71,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    user_id, moblie, total_fund, finance_fund, remark, gmt_create, gmt_modify, gmt_creator, 
-    gmt_modifier, is_del
+    user_id, total_fund, finance_fund, remark, gmt_create, gmt_modify, gmt_creator, gmt_modifier, 
+    is_del
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.AccountFundsExample" >
     select
@@ -106,23 +105,20 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.AccountFunds" >
-    insert into account_funds (user_id, moblie, total_fund, 
-      finance_fund, remark, gmt_create, 
-      gmt_modify, gmt_creator, gmt_modifier, 
-      is_del)
-    values (#{userId,jdbcType=VARCHAR}, #{moblie,jdbcType=VARCHAR}, #{totalFund,jdbcType=DECIMAL}, 
-      #{financeFund,jdbcType=DECIMAL}, #{remark,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, 
-      #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, #{gmtModifier,jdbcType=VARCHAR}, 
-      #{isDel,jdbcType=INTEGER})
+    insert into account_funds (user_id, total_fund, finance_fund, 
+      remark, gmt_create, gmt_modify, 
+      gmt_creator, gmt_modifier, is_del
+      )
+    values (#{userId,jdbcType=VARCHAR}, #{totalFund,jdbcType=DECIMAL}, #{financeFund,jdbcType=DECIMAL}, 
+      #{remark,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, 
+      #{gmtCreator,jdbcType=VARCHAR}, #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.AccountFunds" >
     insert into account_funds
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
         user_id,
-      </if>
-      <if test="moblie != null" >
-        moblie,
       </if>
       <if test="totalFund != null" >
         total_fund,
@@ -152,9 +148,6 @@
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
         #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="moblie != null" >
-        #{moblie,jdbcType=VARCHAR},
       </if>
       <if test="totalFund != null" >
         #{totalFund,jdbcType=DECIMAL},
@@ -194,9 +187,6 @@
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
-      <if test="record.moblie != null" >
-        moblie = #{record.moblie,jdbcType=VARCHAR},
-      </if>
       <if test="record.totalFund != null" >
         total_fund = #{record.totalFund,jdbcType=DECIMAL},
       </if>
@@ -229,7 +219,6 @@
   <update id="updateByExample" parameterType="map" >
     update account_funds
     set user_id = #{record.userId,jdbcType=VARCHAR},
-      moblie = #{record.moblie,jdbcType=VARCHAR},
       total_fund = #{record.totalFund,jdbcType=DECIMAL},
       finance_fund = #{record.financeFund,jdbcType=DECIMAL},
       remark = #{record.remark,jdbcType=VARCHAR},
@@ -245,9 +234,6 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.AccountFunds" >
     update account_funds
     <set >
-      <if test="moblie != null" >
-        moblie = #{moblie,jdbcType=VARCHAR},
-      </if>
       <if test="totalFund != null" >
         total_fund = #{totalFund,jdbcType=DECIMAL},
       </if>
@@ -277,8 +263,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.AccountFunds" >
     update account_funds
-    set moblie = #{moblie,jdbcType=VARCHAR},
-      total_fund = #{totalFund,jdbcType=DECIMAL},
+    set total_fund = #{totalFund,jdbcType=DECIMAL},
       finance_fund = #{financeFund,jdbcType=DECIMAL},
       remark = #{remark,jdbcType=VARCHAR},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},

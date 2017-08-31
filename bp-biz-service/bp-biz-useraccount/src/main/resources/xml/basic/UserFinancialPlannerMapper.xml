@@ -3,7 +3,6 @@
 <mapper namespace="com.tuodao.bp.useraccount.db.mapper.basic.UserFinancialPlannerMapper" >
   <resultMap id="BaseResultMap" type="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
     <id column="user_id" property="userId" jdbcType="VARCHAR" />
-    <result column="moblie" property="moblie" jdbcType="VARCHAR" />
     <result column="financial_planner_level" property="financialPlannerLevel" jdbcType="INTEGER" />
     <result column="inviter_count" property="inviterCount" jdbcType="INTEGER" />
     <result column="direct_inviter_count" property="directInviterCount" jdbcType="INTEGER" />
@@ -76,7 +75,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    user_id, moblie, financial_planner_level, inviter_count, direct_inviter_count, indirect_inviter, 
+    user_id, financial_planner_level, inviter_count, direct_inviter_count, indirect_inviter, 
     vip1_count, dui_in_fund_count, valid_time, gmt_create, gmt_modify, gmt_creator, gmt_modifier, 
     is_del
   </sql>
@@ -111,25 +110,22 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
-    insert into user_financial_planner (user_id, moblie, financial_planner_level, 
-      inviter_count, direct_inviter_count, indirect_inviter, 
-      vip1_count, dui_in_fund_count, valid_time, 
-      gmt_create, gmt_modify, gmt_creator, 
-      gmt_modifier, is_del)
-    values (#{userId,jdbcType=VARCHAR}, #{moblie,jdbcType=VARCHAR}, #{financialPlannerLevel,jdbcType=INTEGER}, 
-      #{inviterCount,jdbcType=INTEGER}, #{directInviterCount,jdbcType=INTEGER}, #{indirectInviter,jdbcType=INTEGER}, 
-      #{vip1Count,jdbcType=INTEGER}, #{duiInFundCount,jdbcType=DECIMAL}, #{validTime,jdbcType=INTEGER}, 
-      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, 
-      #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER})
+    insert into user_financial_planner (user_id, financial_planner_level, inviter_count, 
+      direct_inviter_count, indirect_inviter, vip1_count, 
+      dui_in_fund_count, valid_time, gmt_create, 
+      gmt_modify, gmt_creator, gmt_modifier, 
+      is_del)
+    values (#{userId,jdbcType=VARCHAR}, #{financialPlannerLevel,jdbcType=INTEGER}, #{inviterCount,jdbcType=INTEGER}, 
+      #{directInviterCount,jdbcType=INTEGER}, #{indirectInviter,jdbcType=INTEGER}, #{vip1Count,jdbcType=INTEGER}, 
+      #{duiInFundCount,jdbcType=DECIMAL}, #{validTime,jdbcType=INTEGER}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, #{gmtModifier,jdbcType=VARCHAR}, 
+      #{isDel,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
     insert into user_financial_planner
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
         user_id,
-      </if>
-      <if test="moblie != null" >
-        moblie,
       </if>
       <if test="financialPlannerLevel != null" >
         financial_planner_level,
@@ -171,9 +167,6 @@
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="userId != null" >
         #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="moblie != null" >
-        #{moblie,jdbcType=VARCHAR},
       </if>
       <if test="financialPlannerLevel != null" >
         #{financialPlannerLevel,jdbcType=INTEGER},
@@ -225,9 +218,6 @@
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=VARCHAR},
       </if>
-      <if test="record.moblie != null" >
-        moblie = #{record.moblie,jdbcType=VARCHAR},
-      </if>
       <if test="record.financialPlannerLevel != null" >
         financial_planner_level = #{record.financialPlannerLevel,jdbcType=INTEGER},
       </if>
@@ -272,7 +262,6 @@
   <update id="updateByExample" parameterType="map" >
     update user_financial_planner
     set user_id = #{record.userId,jdbcType=VARCHAR},
-      moblie = #{record.moblie,jdbcType=VARCHAR},
       financial_planner_level = #{record.financialPlannerLevel,jdbcType=INTEGER},
       inviter_count = #{record.inviterCount,jdbcType=INTEGER},
       direct_inviter_count = #{record.directInviterCount,jdbcType=INTEGER},
@@ -292,9 +281,6 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
     update user_financial_planner
     <set >
-      <if test="moblie != null" >
-        moblie = #{moblie,jdbcType=VARCHAR},
-      </if>
       <if test="financialPlannerLevel != null" >
         financial_planner_level = #{financialPlannerLevel,jdbcType=INTEGER},
       </if>
@@ -336,8 +322,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserFinancialPlanner" >
     update user_financial_planner
-    set moblie = #{moblie,jdbcType=VARCHAR},
-      financial_planner_level = #{financialPlannerLevel,jdbcType=INTEGER},
+    set financial_planner_level = #{financialPlannerLevel,jdbcType=INTEGER},
       inviter_count = #{inviterCount,jdbcType=INTEGER},
       direct_inviter_count = #{directInviterCount,jdbcType=INTEGER},
       indirect_inviter = #{indirectInviter,jdbcType=INTEGER},

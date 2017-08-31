@@ -10,7 +10,7 @@ public interface UserVipInfoMapper {
 
     int deleteByExample(UserVipInfoExample example);
 
-    int deleteByPrimaryKey(String userId);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(UserVipInfo record);
 
@@ -18,7 +18,7 @@ public interface UserVipInfoMapper {
 
     List<UserVipInfo> selectByExample(UserVipInfoExample example);
 
-    UserVipInfo selectByPrimaryKey(String userId);
+    UserVipInfo selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") UserVipInfo record, @Param("example") UserVipInfoExample example);
 

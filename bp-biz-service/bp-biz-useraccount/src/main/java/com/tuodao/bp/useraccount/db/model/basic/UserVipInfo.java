@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class UserVipInfo implements Serializable {
-    private String userId;
+    private Integer id;
 
-    private String moblie;
+    private String userId;
 
     private Integer vipLevel;
 
@@ -31,20 +31,20 @@ public class UserVipInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getUserId() {
         return userId;
     }
 
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
-    }
-
-    public String getMoblie() {
-        return moblie;
-    }
-
-    public void setMoblie(String moblie) {
-        this.moblie = moblie == null ? null : moblie.trim();
     }
 
     public Integer getVipLevel() {

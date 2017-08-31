@@ -8,8 +8,6 @@ public class UserLoginLog implements Serializable {
 
     private String userId;
 
-    private String moblie;
-
     private Date loginTime;
 
     private String loginIp;
@@ -34,14 +32,6 @@ public class UserLoginLog implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId == null ? null : userId.trim();
-    }
-
-    public String getMoblie() {
-        return moblie;
-    }
-
-    public void setMoblie(String moblie) {
-        this.moblie = moblie == null ? null : moblie.trim();
     }
 
     public Date getLoginTime() {

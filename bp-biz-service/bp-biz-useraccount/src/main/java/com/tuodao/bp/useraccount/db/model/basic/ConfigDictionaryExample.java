@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ConfigDictonaryExample implements Serializable {
+public class ConfigDictionaryExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -14,7 +14,7 @@ public class ConfigDictonaryExample implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public ConfigDictonaryExample() {
+    public ConfigDictionaryExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

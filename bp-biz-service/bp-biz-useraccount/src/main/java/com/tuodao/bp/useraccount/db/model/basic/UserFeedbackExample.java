@@ -118,52 +118,52 @@ public class UserFeedbackExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andIdEqualTo(Long value) {
+        public Criteria andIdEqualTo(Integer value) {
             addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotEqualTo(Long value) {
+        public Criteria andIdNotEqualTo(Integer value) {
             addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThan(Long value) {
+        public Criteria andIdGreaterThan(Integer value) {
             addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanOrEqualTo(Long value) {
+        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
             addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThan(Long value) {
+        public Criteria andIdLessThan(Integer value) {
             addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanOrEqualTo(Long value) {
+        public Criteria andIdLessThanOrEqualTo(Integer value) {
             addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdIn(List<Long> values) {
+        public Criteria andIdIn(List<Integer> values) {
             addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotIn(List<Long> values) {
+        public Criteria andIdNotIn(List<Integer> values) {
             addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdBetween(Long value1, Long value2) {
+        public Criteria andIdBetween(Integer value1, Integer value2) {
             addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotBetween(Long value1, Long value2) {
+        public Criteria andIdNotBetween(Integer value1, Integer value2) {
             addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
@@ -238,76 +238,6 @@ public class UserFeedbackExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andUserMobileIsNull() {
-            addCriterion("user_mobile is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileIsNotNull() {
-            addCriterion("user_mobile is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileEqualTo(String value) {
-            addCriterion("user_mobile =", value, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileNotEqualTo(String value) {
-            addCriterion("user_mobile <>", value, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileGreaterThan(String value) {
-            addCriterion("user_mobile >", value, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileGreaterThanOrEqualTo(String value) {
-            addCriterion("user_mobile >=", value, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileLessThan(String value) {
-            addCriterion("user_mobile <", value, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileLessThanOrEqualTo(String value) {
-            addCriterion("user_mobile <=", value, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileLike(String value) {
-            addCriterion("user_mobile like", value, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileNotLike(String value) {
-            addCriterion("user_mobile not like", value, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileIn(List<String> values) {
-            addCriterion("user_mobile in", values, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileNotIn(List<String> values) {
-            addCriterion("user_mobile not in", values, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileBetween(String value1, String value2) {
-            addCriterion("user_mobile between", value1, value2, "userMobile");
-            return (Criteria) this;
-        }
-
-        public Criteria andUserMobileNotBetween(String value1, String value2) {
-            addCriterion("user_mobile not between", value1, value2, "userMobile");
-            return (Criteria) this;
-        }
-
         public Criteria andSourceIsNull() {
             addCriterion("source is null");
             return (Criteria) this;
@@ -318,62 +248,52 @@ public class UserFeedbackExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andSourceEqualTo(String value) {
+        public Criteria andSourceEqualTo(Integer value) {
             addCriterion("source =", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceNotEqualTo(String value) {
+        public Criteria andSourceNotEqualTo(Integer value) {
             addCriterion("source <>", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceGreaterThan(String value) {
+        public Criteria andSourceGreaterThan(Integer value) {
             addCriterion("source >", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceGreaterThanOrEqualTo(String value) {
+        public Criteria andSourceGreaterThanOrEqualTo(Integer value) {
             addCriterion("source >=", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceLessThan(String value) {
+        public Criteria andSourceLessThan(Integer value) {
             addCriterion("source <", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceLessThanOrEqualTo(String value) {
+        public Criteria andSourceLessThanOrEqualTo(Integer value) {
             addCriterion("source <=", value, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceLike(String value) {
-            addCriterion("source like", value, "source");
-            return (Criteria) this;
-        }
-
-        public Criteria andSourceNotLike(String value) {
-            addCriterion("source not like", value, "source");
-            return (Criteria) this;
-        }
-
-        public Criteria andSourceIn(List<String> values) {
+        public Criteria andSourceIn(List<Integer> values) {
             addCriterion("source in", values, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceNotIn(List<String> values) {
+        public Criteria andSourceNotIn(List<Integer> values) {
             addCriterion("source not in", values, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceBetween(String value1, String value2) {
+        public Criteria andSourceBetween(Integer value1, Integer value2) {
             addCriterion("source between", value1, value2, "source");
             return (Criteria) this;
         }
 
-        public Criteria andSourceNotBetween(String value1, String value2) {
+        public Criteria andSourceNotBetween(Integer value1, Integer value2) {
             addCriterion("source not between", value1, value2, "source");
             return (Criteria) this;
         }

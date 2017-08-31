@@ -10,7 +10,7 @@ public interface UserInfoExtendMapper {
 
     int deleteByExample(UserInfoExtendExample example);
 
-    int deleteByPrimaryKey(String userId);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(UserInfoExtend record);
 
@@ -18,7 +18,7 @@ public interface UserInfoExtendMapper {
 
     List<UserInfoExtend> selectByExample(UserInfoExtendExample example);
 
-    UserInfoExtend selectByPrimaryKey(String userId);
+    UserInfoExtend selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") UserInfoExtend record, @Param("example") UserInfoExtendExample example);
 

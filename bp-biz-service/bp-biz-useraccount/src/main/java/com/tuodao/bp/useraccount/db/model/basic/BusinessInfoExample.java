@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class BussinesInfoExample implements Serializable {
+public class BusinessInfoExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;
@@ -14,7 +14,7 @@ public class BussinesInfoExample implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public BussinesInfoExample() {
+    public BusinessInfoExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

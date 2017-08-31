@@ -18,9 +18,9 @@
     <result column="is_newbie" property="isNewbie" jdbcType="INTEGER" />
     <result column="is_open_deposit" property="isOpenDeposit" jdbcType="INTEGER" />
     <result column="is_bind_bank" property="isBindBank" jdbcType="INTEGER" />
-    <result column="regist_source" property="registSource" jdbcType="INTEGER" />
-    <result column="regist_ip" property="registIp" jdbcType="VARCHAR" />
-    <result column="regist_version" property="registVersion" jdbcType="VARCHAR" />
+    <result column="register_source" property="registerSource" jdbcType="INTEGER" />
+    <result column="register_ip" property="registerIp" jdbcType="VARCHAR" />
+    <result column="register_version" property="registerVersion" jdbcType="VARCHAR" />
     <result column="source_channel" property="sourceChannel" jdbcType="VARCHAR" />
     <result column="invit_code" property="invitCode" jdbcType="VARCHAR" />
     <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
@@ -90,7 +90,7 @@
   <sql id="Base_Column_List" >
     user_id, user_name, mobile, login_password, pw_security_level, pay_password, avatar_url, 
     direct_inviter_no, indirect_inviter_no, user_status, user_type, invest_flag, invest_user_type, 
-    is_newbie, is_open_deposit, is_bind_bank, regist_source, regist_ip, regist_version, 
+    is_newbie, is_open_deposit, is_bind_bank, register_source, register_ip, register_version, 
     source_channel, invit_code, gmt_create, gmt_modify, gmt_creator, gmt_modifier, is_del
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.tuodao.bp.useraccount.db.model.basic.UserInfoExample" >
@@ -129,8 +129,8 @@
       avatar_url, direct_inviter_no, indirect_inviter_no, 
       user_status, user_type, invest_flag, 
       invest_user_type, is_newbie, is_open_deposit, 
-      is_bind_bank, regist_source, regist_ip, 
-      regist_version, source_channel, invit_code, 
+      is_bind_bank, register_source, register_ip, 
+      register_version, source_channel, invit_code, 
       gmt_create, gmt_modify, gmt_creator, 
       gmt_modifier, is_del)
     values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
@@ -138,8 +138,8 @@
       #{avatarUrl,jdbcType=VARCHAR}, #{directInviterNo,jdbcType=VARCHAR}, #{indirectInviterNo,jdbcType=VARCHAR}, 
       #{userStatus,jdbcType=INTEGER}, #{userType,jdbcType=INTEGER}, #{investFlag,jdbcType=INTEGER}, 
       #{investUserType,jdbcType=INTEGER}, #{isNewbie,jdbcType=INTEGER}, #{isOpenDeposit,jdbcType=INTEGER}, 
-      #{isBindBank,jdbcType=INTEGER}, #{registSource,jdbcType=INTEGER}, #{registIp,jdbcType=VARCHAR}, 
-      #{registVersion,jdbcType=VARCHAR}, #{sourceChannel,jdbcType=VARCHAR}, #{invitCode,jdbcType=VARCHAR}, 
+      #{isBindBank,jdbcType=INTEGER}, #{registerSource,jdbcType=INTEGER}, #{registerIp,jdbcType=VARCHAR}, 
+      #{registerVersion,jdbcType=VARCHAR}, #{sourceChannel,jdbcType=VARCHAR}, #{invitCode,jdbcType=VARCHAR}, 
       #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}, #{gmtCreator,jdbcType=VARCHAR}, 
       #{gmtModifier,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER})
   </insert>
@@ -194,14 +194,14 @@
       <if test="isBindBank != null" >
         is_bind_bank,
       </if>
-      <if test="registSource != null" >
-        regist_source,
+      <if test="registerSource != null" >
+        register_source,
       </if>
-      <if test="registIp != null" >
-        regist_ip,
+      <if test="registerIp != null" >
+        register_ip,
       </if>
-      <if test="registVersion != null" >
-        regist_version,
+      <if test="registerVersion != null" >
+        register_version,
       </if>
       <if test="sourceChannel != null" >
         source_channel,
@@ -274,14 +274,14 @@
       <if test="isBindBank != null" >
         #{isBindBank,jdbcType=INTEGER},
       </if>
-      <if test="registSource != null" >
-        #{registSource,jdbcType=INTEGER},
+      <if test="registerSource != null" >
+        #{registerSource,jdbcType=INTEGER},
       </if>
-      <if test="registIp != null" >
-        #{registIp,jdbcType=VARCHAR},
+      <if test="registerIp != null" >
+        #{registerIp,jdbcType=VARCHAR},
       </if>
-      <if test="registVersion != null" >
-        #{registVersion,jdbcType=VARCHAR},
+      <if test="registerVersion != null" >
+        #{registerVersion,jdbcType=VARCHAR},
       </if>
       <if test="sourceChannel != null" >
         #{sourceChannel,jdbcType=VARCHAR},
@@ -363,14 +363,14 @@
       <if test="record.isBindBank != null" >
         is_bind_bank = #{record.isBindBank,jdbcType=INTEGER},
       </if>
-      <if test="record.registSource != null" >
-        regist_source = #{record.registSource,jdbcType=INTEGER},
+      <if test="record.registerSource != null" >
+        register_source = #{record.registerSource,jdbcType=INTEGER},
       </if>
-      <if test="record.registIp != null" >
-        regist_ip = #{record.registIp,jdbcType=VARCHAR},
+      <if test="record.registerIp != null" >
+        register_ip = #{record.registerIp,jdbcType=VARCHAR},
       </if>
-      <if test="record.registVersion != null" >
-        regist_version = #{record.registVersion,jdbcType=VARCHAR},
+      <if test="record.registerVersion != null" >
+        register_version = #{record.registerVersion,jdbcType=VARCHAR},
       </if>
       <if test="record.sourceChannel != null" >
         source_channel = #{record.sourceChannel,jdbcType=VARCHAR},
@@ -416,9 +416,9 @@
       is_newbie = #{record.isNewbie,jdbcType=INTEGER},
       is_open_deposit = #{record.isOpenDeposit,jdbcType=INTEGER},
       is_bind_bank = #{record.isBindBank,jdbcType=INTEGER},
-      regist_source = #{record.registSource,jdbcType=INTEGER},
-      regist_ip = #{record.registIp,jdbcType=VARCHAR},
-      regist_version = #{record.registVersion,jdbcType=VARCHAR},
+      register_source = #{record.registerSource,jdbcType=INTEGER},
+      register_ip = #{record.registerIp,jdbcType=VARCHAR},
+      register_version = #{record.registerVersion,jdbcType=VARCHAR},
       source_channel = #{record.sourceChannel,jdbcType=VARCHAR},
       invit_code = #{record.invitCode,jdbcType=VARCHAR},
       gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
@@ -478,14 +478,14 @@
       <if test="isBindBank != null" >
         is_bind_bank = #{isBindBank,jdbcType=INTEGER},
       </if>
-      <if test="registSource != null" >
-        regist_source = #{registSource,jdbcType=INTEGER},
+      <if test="registerSource != null" >
+        register_source = #{registerSource,jdbcType=INTEGER},
       </if>
-      <if test="registIp != null" >
-        regist_ip = #{registIp,jdbcType=VARCHAR},
+      <if test="registerIp != null" >
+        register_ip = #{registerIp,jdbcType=VARCHAR},
       </if>
-      <if test="registVersion != null" >
-        regist_version = #{registVersion,jdbcType=VARCHAR},
+      <if test="registerVersion != null" >
+        register_version = #{registerVersion,jdbcType=VARCHAR},
       </if>
       <if test="sourceChannel != null" >
         source_channel = #{sourceChannel,jdbcType=VARCHAR},
@@ -528,9 +528,9 @@
       is_newbie = #{isNewbie,jdbcType=INTEGER},
       is_open_deposit = #{isOpenDeposit,jdbcType=INTEGER},
       is_bind_bank = #{isBindBank,jdbcType=INTEGER},
-      regist_source = #{registSource,jdbcType=INTEGER},
-      regist_ip = #{registIp,jdbcType=VARCHAR},
-      regist_version = #{registVersion,jdbcType=VARCHAR},
+      register_source = #{registerSource,jdbcType=INTEGER},
+      register_ip = #{registerIp,jdbcType=VARCHAR},
+      register_version = #{registerVersion,jdbcType=VARCHAR},
       source_channel = #{sourceChannel,jdbcType=VARCHAR},
       invit_code = #{invitCode,jdbcType=VARCHAR},
       gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
