@@ -1,6 +1,6 @@
 package com.tuodao.bp.useraccount.controller;
 
-import com.tuodao.bp.model.user.input.RegistInput;
+import com.tuodao.bp.model.user.input.RegisterInput;
 import com.tuodao.bp.useraccount.service.IUserService;
 import com.tuodao.bp.useraccount.spring.UnableValidate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,11 +25,11 @@ public class UserController {
 
     /**
      * 注册
-     * @param registInput
+     * @param registerInput
      */
-    @RequestMapping(value = "regist", method = RequestMethod.POST)
+    @RequestMapping(value = "register", method = RequestMethod.POST)
     @UnableValidate
-    public void regist(RegistInput registInput) {
-        userService.regist(registInput);
+    public void register(RegisterInput registerInput) {
+        userService.register(registerInput);
     }
 }

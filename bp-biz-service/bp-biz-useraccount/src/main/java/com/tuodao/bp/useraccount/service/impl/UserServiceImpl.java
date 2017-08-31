@@ -1,6 +1,6 @@
 package com.tuodao.bp.useraccount.service.impl;
 
-import com.tuodao.bp.model.user.input.RegistInput;
+import com.tuodao.bp.model.user.input.RegisterInput;
 import com.tuodao.bp.useraccount.db.model.basic.UserInfo;
 import com.tuodao.bp.useraccount.service.IUserService;
 import com.tuodao.bp.useraccount.service.UserBaseService;
@@ -28,8 +28,8 @@ public class UserServiceImpl extends UserBaseService implements IUserService {
     private AsyncUserService asyncUserService;
 
     @Override
-    public void regist(RegistInput input) {
-        logger.info("user regist ,input = {}", input);
+    public void register(RegisterInput input) {
+        logger.info("user register ,input = {}", input);
 
         checkMobileExist(input.getMobile());
 

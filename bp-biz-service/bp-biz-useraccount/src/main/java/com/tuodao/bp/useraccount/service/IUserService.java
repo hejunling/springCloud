@@ -1,6 +1,6 @@
 package com.tuodao.bp.useraccount.service;
 
-import com.tuodao.bp.model.user.input.RegistInput;
+import com.tuodao.bp.model.user.input.RegisterInput;
 
 /**
  * @description: 用户相关service interface
@@ -16,6 +16,6 @@ public interface IUserService {
      *
      * @param input
      */
-    void regist(RegistInput input);
+    void register(RegisterInput input);
 
 }

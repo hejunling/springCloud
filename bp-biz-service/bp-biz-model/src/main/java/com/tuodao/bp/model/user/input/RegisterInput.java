@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @time: 10:37
  * @copyright: 拓道金服 Copyright (c) 2017
  */
-public class RegistInput implements Serializable {
+public class RegisterInput implements Serializable {
     private static final long serialVersionUID = 3578961609778304301L;
 
     /**
@@ -71,17 +71,17 @@ public class RegistInput implements Serializable {
      * 注册来源（0：后台；1：WEB；2：IOS；3：ANDROID；4：H5）
      */
     @NotNull
-    private Integer registSource;
+    private Integer registerSource;
 
     /**
      * 注册IP
      */
-    private String registIp;
+    private String registerIp;
 
     /**
      * 注册版本
      */
-    private String registVersion;
+    private String registerVersion;
 
     /**
      * 来源渠道（好友邀请、VIVO、360等等）
@@ -166,28 +166,28 @@ public class RegistInput implements Serializable {
         this.investUserType = investUserType;
     }
 
-    public Integer getRegistSource() {
-        return registSource;
+    public Integer getRegisterSource() {
+        return registerSource;
     }
 
-    public void setRegistSource(Integer registSource) {
-        this.registSource = registSource;
+    public void setRegisterSource(Integer registerSource) {
+        this.registerSource = registerSource;
     }
 
-    public String getRegistIp() {
-        return registIp;
+    public String getRegisterIp() {
+        return registerIp;
     }
 
-    public void setRegistIp(String registIp) {
-        this.registIp = registIp;
+    public void setRegisterIp(String registerIp) {
+        this.registerIp = registerIp;
     }
 
-    public String getRegistVersion() {
-        return registVersion;
+    public String getRegisterVersion() {
+        return registerVersion;
     }
 
-    public void setRegistVersion(String registVersion) {
-        this.registVersion = registVersion;
+    public void setRegisterVersion(String registerVersion) {
+        this.registerVersion = registerVersion;
     }
 
     public String getSourceChannel() {
@@ -208,7 +208,7 @@ public class RegistInput implements Serializable {
 
     @Override
     public String toString() {
-        return "RegistInput{" +
+        return "RegisterInput{" +
                 "userName='" + userName + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", loginPassword='" + loginPassword + '\'' +
@@ -218,9 +218,9 @@ public class RegistInput implements Serializable {
                 ", inviterMobile='" + inviterMobile + '\'' +
                 ", userType=" + userType +
                 ", investUserType=" + investUserType +
-                ", registSource=" + registSource +
-                ", registIp='" + registIp + '\'' +
-                ", registVersion='" + registVersion + '\'' +
+                ", registerSource=" + registerSource +
+                ", registerIp='" + registerIp + '\'' +
+                ", registerVersion='" + registerVersion + '\'' +
                 ", sourceChannel='" + sourceChannel + '\'' +
                 ", gmtCreator='" + gmtCreator + '\'' +
                 '}';

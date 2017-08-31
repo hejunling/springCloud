@@ -50,7 +50,7 @@ public class AsyncUserService {
      * @param userInfo
      */
     public void initRegist(UserInfo userInfo) {
-        logger.info("async regist info ,userInfo.userId ={}", userInfo.getUserId());
+        logger.info("async register info ,userInfo.userId ={}", userInfo.getUserId());
         // 用户信息详情(user_info_detail）
         insertUserInfoDetail(userInfo);
         //用户VIP信息（user_vip_info）
@@ -92,7 +92,7 @@ public class AsyncUserService {
         UserBusiness userBusiness = new UserBusiness();
         userBusiness.setUserId(userInfo.getUserId());
         userBusiness.setBussinessCode(BUSSINESS_CODE_FINANCE);
-        userBusiness.setOpenType(userInfo.getRegistSource());
+        userBusiness.setOpenType(userInfo.getRegisterSource());
         userBusiness.setGmtCreator(userInfo.getGmtCreator());
         userBusinessMapper.insertSelective(userBusiness);
     }
