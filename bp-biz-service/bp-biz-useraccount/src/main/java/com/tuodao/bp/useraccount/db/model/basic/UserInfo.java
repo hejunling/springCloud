@@ -36,11 +36,11 @@ public class UserInfo implements Serializable {
 
     private Integer isBindBank;
 
-    private Integer registSource;
+    private Integer registerSource;
 
-    private String registIp;
+    private String registerIp;
 
-    private String registVersion;
+    private String registerVersion;
 
     private String sourceChannel;
 
@@ -186,28 +186,28 @@ public class UserInfo implements Serializable {
         this.isBindBank = isBindBank;
     }
 
-    public Integer getRegistSource() {
-        return registSource;
+    public Integer getRegisterSource() {
+        return registerSource;
     }
 
-    public void setRegistSource(Integer registSource) {
-        this.registSource = registSource;
+    public void setRegisterSource(Integer registerSource) {
+        this.registerSource = registerSource;
     }
 
-    public String getRegistIp() {
-        return registIp;
+    public String getRegisterIp() {
+        return registerIp;
     }
 
-    public void setRegistIp(String registIp) {
-        this.registIp = registIp == null ? null : registIp.trim();
+    public void setRegisterIp(String registerIp) {
+        this.registerIp = registerIp == null ? null : registerIp.trim();
     }
 
-    public String getRegistVersion() {
-        return registVersion;
+    public String getRegisterVersion() {
+        return registerVersion;
     }
 
-    public void setRegistVersion(String registVersion) {
-        this.registVersion = registVersion == null ? null : registVersion.trim();
+    public void setRegisterVersion(String registerVersion) {
+        this.registerVersion = registerVersion == null ? null : registerVersion.trim();
     }
 
     public String getSourceChannel() {

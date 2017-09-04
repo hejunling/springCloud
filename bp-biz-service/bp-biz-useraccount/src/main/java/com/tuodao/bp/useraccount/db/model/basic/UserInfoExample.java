@@ -1148,203 +1148,203 @@ public class UserInfoExample implements Serializable {
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceIsNull() {
-            addCriterion("regist_source is null");
+        public Criteria andRegisterSourceIsNull() {
+            addCriterion("register_source is null");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceIsNotNull() {
-            addCriterion("regist_source is not null");
+        public Criteria andRegisterSourceIsNotNull() {
+            addCriterion("register_source is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceEqualTo(Integer value) {
-            addCriterion("regist_source =", value, "registSource");
+        public Criteria andRegisterSourceEqualTo(Integer value) {
+            addCriterion("register_source =", value, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceNotEqualTo(Integer value) {
-            addCriterion("regist_source <>", value, "registSource");
+        public Criteria andRegisterSourceNotEqualTo(Integer value) {
+            addCriterion("register_source <>", value, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceGreaterThan(Integer value) {
-            addCriterion("regist_source >", value, "registSource");
+        public Criteria andRegisterSourceGreaterThan(Integer value) {
+            addCriterion("register_source >", value, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceGreaterThanOrEqualTo(Integer value) {
-            addCriterion("regist_source >=", value, "registSource");
+        public Criteria andRegisterSourceGreaterThanOrEqualTo(Integer value) {
+            addCriterion("register_source >=", value, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceLessThan(Integer value) {
-            addCriterion("regist_source <", value, "registSource");
+        public Criteria andRegisterSourceLessThan(Integer value) {
+            addCriterion("register_source <", value, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceLessThanOrEqualTo(Integer value) {
-            addCriterion("regist_source <=", value, "registSource");
+        public Criteria andRegisterSourceLessThanOrEqualTo(Integer value) {
+            addCriterion("register_source <=", value, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceIn(List<Integer> values) {
-            addCriterion("regist_source in", values, "registSource");
+        public Criteria andRegisterSourceIn(List<Integer> values) {
+            addCriterion("register_source in", values, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceNotIn(List<Integer> values) {
-            addCriterion("regist_source not in", values, "registSource");
+        public Criteria andRegisterSourceNotIn(List<Integer> values) {
+            addCriterion("register_source not in", values, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceBetween(Integer value1, Integer value2) {
-            addCriterion("regist_source between", value1, value2, "registSource");
+        public Criteria andRegisterSourceBetween(Integer value1, Integer value2) {
+            addCriterion("register_source between", value1, value2, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistSourceNotBetween(Integer value1, Integer value2) {
-            addCriterion("regist_source not between", value1, value2, "registSource");
+        public Criteria andRegisterSourceNotBetween(Integer value1, Integer value2) {
+            addCriterion("register_source not between", value1, value2, "registerSource");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpIsNull() {
-            addCriterion("regist_ip is null");
+        public Criteria andRegisterIpIsNull() {
+            addCriterion("register_ip is null");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpIsNotNull() {
-            addCriterion("regist_ip is not null");
+        public Criteria andRegisterIpIsNotNull() {
+            addCriterion("register_ip is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpEqualTo(String value) {
-            addCriterion("regist_ip =", value, "registIp");
+        public Criteria andRegisterIpEqualTo(String value) {
+            addCriterion("register_ip =", value, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpNotEqualTo(String value) {
-            addCriterion("regist_ip <>", value, "registIp");
+        public Criteria andRegisterIpNotEqualTo(String value) {
+            addCriterion("register_ip <>", value, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpGreaterThan(String value) {
-            addCriterion("regist_ip >", value, "registIp");
+        public Criteria andRegisterIpGreaterThan(String value) {
+            addCriterion("register_ip >", value, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpGreaterThanOrEqualTo(String value) {
-            addCriterion("regist_ip >=", value, "registIp");
+        public Criteria andRegisterIpGreaterThanOrEqualTo(String value) {
+            addCriterion("register_ip >=", value, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpLessThan(String value) {
-            addCriterion("regist_ip <", value, "registIp");
+        public Criteria andRegisterIpLessThan(String value) {
+            addCriterion("register_ip <", value, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpLessThanOrEqualTo(String value) {
-            addCriterion("regist_ip <=", value, "registIp");
+        public Criteria andRegisterIpLessThanOrEqualTo(String value) {
+            addCriterion("register_ip <=", value, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpLike(String value) {
-            addCriterion("regist_ip like", value, "registIp");
+        public Criteria andRegisterIpLike(String value) {
+            addCriterion("register_ip like", value, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpNotLike(String value) {
-            addCriterion("regist_ip not like", value, "registIp");
+        public Criteria andRegisterIpNotLike(String value) {
+            addCriterion("register_ip not like", value, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpIn(List<String> values) {
-            addCriterion("regist_ip in", values, "registIp");
+        public Criteria andRegisterIpIn(List<String> values) {
+            addCriterion("register_ip in", values, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpNotIn(List<String> values) {
-            addCriterion("regist_ip not in", values, "registIp");
+        public Criteria andRegisterIpNotIn(List<String> values) {
+            addCriterion("register_ip not in", values, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpBetween(String value1, String value2) {
-            addCriterion("regist_ip between", value1, value2, "registIp");
+        public Criteria andRegisterIpBetween(String value1, String value2) {
+            addCriterion("register_ip between", value1, value2, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistIpNotBetween(String value1, String value2) {
-            addCriterion("regist_ip not between", value1, value2, "registIp");
+        public Criteria andRegisterIpNotBetween(String value1, String value2) {
+            addCriterion("register_ip not between", value1, value2, "registerIp");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionIsNull() {
-            addCriterion("regist_version is null");
+        public Criteria andRegisterVersionIsNull() {
+            addCriterion("register_version is null");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionIsNotNull() {
-            addCriterion("regist_version is not null");
+        public Criteria andRegisterVersionIsNotNull() {
+            addCriterion("register_version is not null");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionEqualTo(String value) {
-            addCriterion("regist_version =", value, "registVersion");
+        public Criteria andRegisterVersionEqualTo(String value) {
+            addCriterion("register_version =", value, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionNotEqualTo(String value) {
-            addCriterion("regist_version <>", value, "registVersion");
+        public Criteria andRegisterVersionNotEqualTo(String value) {
+            addCriterion("register_version <>", value, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionGreaterThan(String value) {
-            addCriterion("regist_version >", value, "registVersion");
+        public Criteria andRegisterVersionGreaterThan(String value) {
+            addCriterion("register_version >", value, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionGreaterThanOrEqualTo(String value) {
-            addCriterion("regist_version >=", value, "registVersion");
+        public Criteria andRegisterVersionGreaterThanOrEqualTo(String value) {
+            addCriterion("register_version >=", value, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionLessThan(String value) {
-            addCriterion("regist_version <", value, "registVersion");
+        public Criteria andRegisterVersionLessThan(String value) {
+            addCriterion("register_version <", value, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionLessThanOrEqualTo(String value) {
-            addCriterion("regist_version <=", value, "registVersion");
+        public Criteria andRegisterVersionLessThanOrEqualTo(String value) {
+            addCriterion("register_version <=", value, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionLike(String value) {
-            addCriterion("regist_version like", value, "registVersion");
+        public Criteria andRegisterVersionLike(String value) {
+            addCriterion("register_version like", value, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionNotLike(String value) {
-            addCriterion("regist_version not like", value, "registVersion");
+        public Criteria andRegisterVersionNotLike(String value) {
+            addCriterion("register_version not like", value, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionIn(List<String> values) {
-            addCriterion("regist_version in", values, "registVersion");
+        public Criteria andRegisterVersionIn(List<String> values) {
+            addCriterion("register_version in", values, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionNotIn(List<String> values) {
-            addCriterion("regist_version not in", values, "registVersion");
+        public Criteria andRegisterVersionNotIn(List<String> values) {
+            addCriterion("register_version not in", values, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionBetween(String value1, String value2) {
-            addCriterion("regist_version between", value1, value2, "registVersion");
+        public Criteria andRegisterVersionBetween(String value1, String value2) {
+            addCriterion("register_version between", value1, value2, "registerVersion");
             return (Criteria) this;
         }
 
-        public Criteria andRegistVersionNotBetween(String value1, String value2) {
-            addCriterion("regist_version not between", value1, value2, "registVersion");
+        public Criteria andRegisterVersionNotBetween(String value1, String value2) {
+            addCriterion("register_version not between", value1, value2, "registerVersion");
             return (Criteria) this;
         }
 

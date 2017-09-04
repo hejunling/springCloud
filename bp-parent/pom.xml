@@ -27,7 +27,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<nexus.url>http://72.127.2.158:8081/repository/maven-public/</nexus.url>
-		<nexus.release.urlx>http://72.127.2.158:8081/repository/maven-releases/</nexus.release.urlx>
+		<nexus.release.url>http://72.127.2.158:8081/repository/maven-releases/</nexus.release.url>
 		<logstash-logback.version>4.7</logstash-logback.version>
 		<pagehelper.version>4.1.6</pagehelper.version>
 		<guava.version>19.0</guava.version>
